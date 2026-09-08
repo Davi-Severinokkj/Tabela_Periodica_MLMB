@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* RESET */
+body{
+    margin:0;
+    padding:0;
+    font-family:'Google Sans', sans-serif;
+}
+
+/* HEADER */
+
+
+.header_container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center; 
+    margin:auto;
+    padding:10px;
+    border-bottom: 1px solid;
+    gap: 30px;
+}
+.header_container img{
+    padding: 0px;
+    margin: 0px;
+    transition: 0.3s;
+    width: 100px;
+    height: auto;
+}
+.header_container img:hover{
+    transition: 0.3s;
+    transform: scale(1.03);
+}
+
+#search{
+    justify-self: center;
+    width: 300px;
+    padding: 10px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#buttonTableP {
+    background: #85216f99;
+    color: white;
+    
+    border: 1px solid #ddd;
+    padding: 1rem;
+    font-family: 'Poppins';
+    border-radius: 8px;
+    cursor: pointer;    
+    transition: 0.1s;
+    margin-right: 20px;
+}
+
+#buttonTableP:hover{
+    transform: scale(1.03);
+}
+
+#buttonTableP:active{
+    transform: scale(0.97);
+}
+
+
+/* MENU */
+
+.menu-area{
+    position:relative;
+}
+
+#buttonMenu {
+    border: none;
+    border-radius: 7px;
+    background: #85216f99;
+    margin: 0px;
+    font-size: 12px;
+    cursor: pointer;
+    color: white;
+    padding: 1rem;
+    transition: 0.3s;
+}
+
+#buttonMenu:hover{
+    transition: 0.3s;
+    transform: scale(1.03);
+    
+}
+
+#menuDropdown{
+    overflow: hidden;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    z-index: 1000;
+    background: white;
+    border-radius:6px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    list-style:none;
+    padding:0;
+    margin:0;
+    margin-top: 35px;
+    width:180px;
+    display:none;
+}
+
+#menuDropdown li a{
+    display:block;
+    padding:12px;
+    text-decoration:none;
+    color:black;
+}
+
+#menuDropdown li a:hover{
+    background:#f0f0f0;
+}
+
+#menuDropdown.ativo{
+    display: block;
+}
+.elemento.aaaa{
+    padding: 0px;
+    margin: 0px;
+    background-color: #2a8f2a; /* Tom mais escuro */
+    transform: translateY(-6px);
+    z-index: 9999;
+    color: white;
+    transition: 0.3s; /* Transição suave */
+}
+
+/* TABELA PERIÓDICA */
+
+.table-periodic.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 20px;
+}
+.table-periodic.form .elemento{
+    width: calc(100% / 7);
+}
+.table-periodic.form .elemento{
+    grid-column: auto !important;
+    grid-row: auto !important;
+}
+
+.table-periodic{
+    color: white !important;
+    display:grid;
+    grid-template-columns: repeat(18, minmax(40px, 1fr));
+    gap:4px;
+    padding:100px;
+    overflow-x:auto;
+}
+.table-periodic a{
+    color: white;
+    text-decoration: none;
+}
+
+/* ELEMENTO */
+
+.elemento{
+    position:relative;
+    width:100%;
+    aspect-ratio: 4/5;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    cursor: pointer;
+}
+
+.elemento:hover{
+    transform: translateY(-5px) scale(1.05);
+}
+
+
+/* número */
+.numero{
+    position:absolute;
+    top:5px;
+    left:8px;
+    font-size:12px;
+}
+
+/* símbolo */
+.simbolo{
+    font-size:28px;
+    font-weight:bold;
+    cursor: pointer;
+}
+
+span{
+    cursor: pointer;
+}
+
+
+/* nome */
+.nome{
+    font-size:12px;
+    margin-top:5px;
+}
+
+/* sessão de informações dos elementos */
+
+.modal-content img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+#modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal.ativo{
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    margin: 15% auto;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 9999;
+}
+
+.fechar {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.metais_alcalinos { background: #A52A2A; }
+
+.metais_alcalinos_terrosos { background: #FF8C00; }
+
+.metais_de_transicao { background: #DB7093; }
+
+.metais_pos_transicao { background: #DAA520; }
+
+.semi_metais { background: #3CB371; }
+
+.nao_metais_poliatomicos { background: #9370DB; }
+
+.nao_metais_diatomicos { background: #87CEEB; }
+
+.gases_nobres { background: #6A5ACD; }
+
+.desconhecidos { background: #FF69B4; }
+
+.lantanideos { background: #FF69B4; }
+
+.actinideos { background: #48D1CC; }
+
+@media (max-width: 768px){
+
+    h2{
+        display: none;
+    }
+
+    .header_container{
+        display:flex;
+        justify-content:space-between;
+        align-items:center; 
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin:auto;
+        padding:10px;
+        border-bottom: 1px solid;
+    }
+
+    .simbolo{
+        font-size:16px;
+    }
+
+    .nome{
+        display:none; /* esconde nome no celular */
+    }
+
+    .numero{
+        font-size:8px;
+    }
+
+}
+@media(max-width: 1150px){    
+    .header_container{
+        display:flex;
+        justify-content:space-between;
+        align-items:center; 
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin:auto;
+        padding:10px;
+        border-bottom: 1px solid;
+    }
+
+    .simbolo{
+        font-size:16px;
+    }
+
+    .nome{
+        display:none; /* esconde nome no celular */
+    }
+
+    .numero{
+        font-size:8px;
+    }
+
+}
+.elemento{
+    transition: 0.2s;
+}
+
+.elemento:hover{
+    transform: scale(1.08);
+    z-index: 2;
+}
+#buttonTableP{
+    transition: 0.15s;
+}
+
+#buttonTableP:active{
+    transform: scale(0.95);
+}
+#menuDropdown{
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: 0.2s;
+    
+}
+
+#menuDropdown.ativo{
+    transform: translateY(0);
+    opacity: 1;
+
+}
+.modal{
+    backdrop-filter: blur(1px);
+}
+.metais_alcalinos{ order: 1; }
+.metais_alcalinos_terrosos{ order: 2; }
+.metais_de_transicao{ order: 3; }
+.metais_pos_transicao{ order: 4; }
+.semi_metais{ order: 5; }
+.nao_metais_poliatomicos{ order: 6; }
+.nao_metais_diatomicos{ order: 7; }
+.gases_nobres{ order: 8; }
+.desconhecidos{ order: 9; }
+.lantanideos{ order: 10; }
+.actinideos{ order: 11; }
+
+.footer_container{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    text-align: center;
+    
+}
