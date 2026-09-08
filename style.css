@@ -124,8 +124,8 @@ body{
     padding: 0px;
     margin: 0px;
     background-color: #2a8f2a; /* Tom mais escuro */
-    transform: translateY(-6px);
-    z-index: 9999;
+    transform: translateY(-3px);
+    z-index: 99;
     color: white;
     transition: 0.3s; /* Transição suave */
 }
@@ -253,7 +253,7 @@ span{
 
 .metais_alcalinos_terrosos { background: #FF8C00; }
 
-.metais_de_transicao { background: #DB7093; }
+.metais_de_transicao { background: #DC143C; }
 
 .metais_pos_transicao { background: #DAA520; }
 

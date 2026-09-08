@@ -10,6 +10,9 @@ botao.addEventListener("click", () => {
     if(menu.classList.contains("ativo")){
 
         document.body.style.overflow = "hidden";
+        document.body.style.position = "relative";
+        document.body.style.zIndex = "9999";
+
 
     } else {
 
