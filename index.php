@@ -837,27 +837,165 @@
 </main>
 
 <!-- Modal -->
+
 <div id="modal" class="modal">
 
     <div class="modal-conteudo">
 
         <span id="fechar">&times;</span>
 
-        <h1 id="nome"></h1>
+        <!-- Cabeçalho -->
+        <div class="modal-cabecalho">
 
-        <p id="simbolo"></p>
+            <div class="simbolo-elemento">
+                <span id="simbolo"></span>
+                <span id="numero"></span>
+            </div>
 
-        <p id="numero"></p>
+            <div class="informacoes-principais">
+                <h1 id="nome"></h1>
+                <p id="classificacao"></p>
+            </div>
 
-        <p id="massa"></p>
+        </div>
 
-        <p id="grupo"></p>
 
-        <p id="descricao"></p>
+        <!-- Informações gerais -->
+        <div class="secao-modal">
+
+            <h2>Informações gerais</h2>
+
+            <div class="grid-informacoes">
+
+                <div class="informacao">
+                    <span>Nome</span>
+                    <strong id="nome-info"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Símbolo</span>
+                    <strong id="simbolo-info"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Número atômico</span>
+                    <strong id="numero-info"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Massa atômica</span>
+                    <strong id="massa"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Grupo</span>
+                    <strong id="grupo"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Período</span>
+                    <strong id="periodo"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Classificação</span>
+                    <strong id="classificacao-info"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Estado físico</span>
+                    <strong id="estado-fisico"></strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Propriedades atômicas -->
+        <div class="secao-modal">
+
+            <h2>Propriedades atômicas</h2>
+
+            <div class="grid-informacoes">
+
+                <div class="informacao">
+                    <span>Configuração eletrônica</span>
+                    <strong id="configuracao"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Eletronegatividade</span>
+                    <strong id="eletronegatividade"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Raio atômico</span>
+                    <strong id="raio-atomico"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Energia de ionização</span>
+                    <strong id="energia-ionizacao"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Estados de oxidação</span>
+                    <strong id="estado-oxidacao"></strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Propriedades físicas -->
+        <div class="secao-modal">
+
+            <h2>Propriedades físicas</h2>
+
+            <div class="grid-informacoes">
+
+                <div class="informacao">
+                    <span>Densidade</span>
+                    <strong id="densidade"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Ponto de fusão</span>
+                    <strong id="ponto-fusao"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Ponto de ebulição</span>
+                    <strong id="ponto-ebulicao"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Condutividade</span>
+                    <strong id="condutividade"></strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Descrição -->
+        <div class="secao-modal">
+
+            <h2>Sobre o elemento</h2>
+
+            <p id="descricao">
+                Informações sobre o elemento.
+            </p>
+
+        </div>
 
     </div>
 
 </div>
+
 
 
 <?php include ("includes/footer.php"); ?>
