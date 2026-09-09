@@ -252,33 +252,110 @@ links.forEach(link => {
 
 // ===== PESQUISA =====
 
-let search = document.getElementById("search");
+const search = document.getElementById("search");
+const limparPesquisa = document.getElementById("limparPesquisa");
+const resultadoPesquisa = document.getElementById("resultadoPesquisa");
 
-search.addEventListener("input", () => {
 
-    let texto = search.value.toLowerCase();
+// Remove acentos e transforma em minúsculo
+function normalizarTexto(texto) {
+
+    return texto
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+
+}
+
+
+// Função que realiza a pesquisa
+function realizarPesquisa() {
+
+    const texto = normalizarTexto(search.value);
+
+    let encontrados = 0;
 
     elementos.forEach(el => {
 
-        let nome = "";
+        const nome = el.querySelector(".nome")?.textContent || "";
+        const simbolo = el.querySelector(".simbolo")?.textContent || "";
+        const numero = el.dataset.id || "";
 
-        // evita erro se não tiver data-nome
-        if (el.dataset.nome) {
+        const conteudo = normalizarTexto(
+            `${nome} ${simbolo} ${numero}`
+        );
 
-            nome = el.dataset.nome.toLowerCase();
+        if (texto === "") {
 
-        }
+            el.classList.remove("oculto-pesquisa");
 
-        if (nome.includes(texto)) {
+            encontrados++;
 
-            el.style.opacity = "1";
+        } else if (conteudo.includes(texto)) {
+
+            el.classList.remove("oculto-pesquisa");
+
+            encontrados++;
 
         } else {
 
-            el.style.opacity = "0.2";
+            el.classList.add("oculto-pesquisa");
 
         }
 
     });
+
+
+    // Mostra/esconde o botão X
+    if (texto.length > 0) {
+
+        limparPesquisa.style.display = "flex";
+
+    } else {
+
+        limparPesquisa.style.display = "none";
+
+    }
+
+
+    // Mensagem
+    if (texto === "") {
+
+        resultadoPesquisa.textContent = "";
+
+    } else if (encontrados === 0) {
+
+        resultadoPesquisa.textContent =
+            "Nenhum elemento encontrado.";
+
+    } else if (encontrados === 1) {
+
+        resultadoPesquisa.textContent =
+            "1 elemento encontrado.";
+
+    } else {
+
+        resultadoPesquisa.textContent =
+            `${encontrados} elementos encontrados.`;
+
+    }
+
+}
+
+
+// Detecta quando o usuário digita
+search.addEventListener("input", realizarPesquisa);
+
+
+// ===== BOTÃO LIMPAR =====
+
+limparPesquisa.addEventListener("click", () => {
+
+    search.value = "";
+
+    realizarPesquisa();
+
+    search.focus();
 
 });

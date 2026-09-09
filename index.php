@@ -6,7 +6,22 @@
 
 <?php  include("includes/header.php");?>
 
-<input type="text" id="search" autocomplete="off" placeholder="Pesquisar elemento...">
+<div class="search-container">
+
+    <span class="search-icon">⌕</span>
+
+    <input
+            type="text"
+            id="search"
+            autocomplete="off"
+            placeholder="Pesquisar elemento..."
+    >
+
+    <button id="limparPesquisa" type="button">&times;</button>
+
+</div>
+
+<p id="resultadoPesquisa"></p>
 
 <main>
     <section id="main">
@@ -15,14 +30,14 @@
 
 
             <!-- HIDROGÊNIO -->
-            <div data-imagem="img/hidrogenio.jpg" data-id="1" data-nome="Nome do elemento: Hidrogênio" data-simbolo="Símbolo químico: H" data-number-Atomic="Número atômico (Z): 1" data-mass-Atomic="Massa atômica: 1,008 u" data-descricao="O hidrogênio (H) é o elemento mais abundante do universo, um gás incolor, inodoro e altamente inflamável" class="elemento nao_metais_diatomicos" style="grid-column:1; grid-row:1; background: #5F9EA0;">
+            <div data-imagem="img/hidrogenio.jpg" data-id="1" data-nome="Nome do elemento: Hidrogênio" data-simbolo="Símbolo químico: H" class="elemento nao_metais_diatomicos" style="grid-column:1; grid-row:1; background: #5F9EA0;">
                 <span class="numero">1</span>
                 <a href="#" class="simbolo">H</a>
                 <span class="nome">Hidrogênio</span>
             </div>
 
             <!-- HÉLIO -->
-            <div data-id="2" class="elemento gases_nobres" data-nome="Nome do elemento: Hélio" data-desc="" style="grid-column:18; grid-row:1;">
+            <div data-id="2" class="elemento gases_nobres" data-nome="Nome do elemento: Hélio" style="grid-column:18; grid-row:1;">
                 <span class="numero">2</span>
                 <a href="#" class="simbolo">He</a>
                 <span class="nome">Hélio</span>

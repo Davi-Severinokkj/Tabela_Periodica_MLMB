@@ -44,15 +44,111 @@ body{
     color: #9370DB;
 }
 
-#search{
-    justify-self: center;
-    width: 250px;
-    padding: 8px;
+/* ============================= */
+/* PESQUISA */
+/* ============================= */
+
+.search-container {
+    position: relative;
+
+    width: min(400px, 90%);
     margin: 20px auto;
-    display: block;
-    border-radius: 8px;
-    border: 1px solid #7eaacd;
+
+    display: flex;
+    align-items: center;
+}
+
+/* ÍCONE */
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+
+    font-size: 20px;
+
+    color: #777;
+
+    pointer-events: none;
+}
+
+/* INPUT */
+
+#search {
+    width: 100%;
+
+    padding: 13px 45px 13px 45px;
+
+    border: 1px solid #ccc;
+    border-radius: 12px;
+
+    outline: none;
+
+    font-family: 'Google Sans', sans-serif;
+    font-size: 15px;
+
+    box-sizing: border-box;
+
+    transition: 0.2s;
+}
+
+#search:focus {
+    border-color: #85216f;
+
+    box-shadow: 0 0 0 3px rgba(133, 33, 111, 0.12);
+}
+
+/* BOTÃO LIMPAR */
+
+#limparPesquisa {
+    position: absolute;
+
+    top: 50%;
+    right: 10px;
+
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+    color: #777;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s;
+}
+
+#limparPesquisa:hover {
+    background: #eee;
+    color: #222;
+}
+/* RESULTADO */
+
+#resultadoPesquisa {
     text-align: center;
+
+    margin: -8px auto 20px;
+
+    color: #777;
+
+    font-size: 14px;
+
+    min-height: 18px;
+}
+
+/* ELEMENTOS ESCONDIDOS PELA PESQUISA */
+
+.elemento.oculto-pesquisa {
+    display: none;
 }
 
 #buttonTableP {
