@@ -7,6 +7,7 @@ body{
     padding:0;
     font-family:'Google Sans', sans-serif;
     scroll-behavior: smooth;
+    background: antiquewhite;
 }
 
 /* HEADER */
@@ -18,7 +19,7 @@ body{
     align-items:center; 
     margin:auto;
     padding:10px;
-    border-bottom: 1px solid;
+    border-bottom: 0.1rem solid;
     gap: 30px;
 }
 .header_container img{
@@ -45,18 +46,18 @@ body{
 
 #search{
     justify-self: center;
-    width: 300px;
-    padding: 10px;
+    width: 250px;
+    padding: 8px;
     margin: 20px auto;
     display: block;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #7eaacd;
     text-align: center;
 }
 
 #buttonTableP {
     display: none;
-    background: #85216f99;
+    background: #528053;
     color: white;
     border: 1px solid #ddd;
     padding: 1rem;
@@ -85,7 +86,7 @@ body{
 #buttonMenu {
     border: none;
     border-radius: 7px;
-    background: #85216f99;
+    background: #528053;
     margin: auto;
     font-size: 1rem;
     cursor: pointer;
@@ -159,7 +160,7 @@ body{
     display:grid;
     grid-template-columns: repeat(18, minmax(40px, 1fr));
     gap:4px;
-    padding:100px;
+    padding: 55px;
     overflow-x:auto;
 }
 .table-periodic a{
