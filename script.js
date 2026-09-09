@@ -39,6 +39,36 @@ botaoTabela.addEventListener("click", () => {
 
 const elementos = document.querySelectorAll(".elemento");
 
+elementos.forEach(elemento => {
+
+    elemento.addEventListener("click", () => {
+
+        console.log("Elemento clicado!");
+
+    });
+
+});
+elementos.forEach(elemento => {
+
+    elemento.addEventListener("click", () => {
+
+        // Pega o número atômico do elemento clicado
+        const numeroAtomico = elemento.querySelector(".numero").textContent;
+
+        // COMUNICAÇÃO COM O PHP
+        fetch(`api/buscar_elemento.php?id=${numeroAtomico}`)
+            .then(response => response.json())
+            .then(dados => {
+
+                console.log(dados);
+
+            });
+
+    });
+
+});
+
+
 const modal = document.getElementById("modal");
 
 const fechar = document.getElementById("fechar");
