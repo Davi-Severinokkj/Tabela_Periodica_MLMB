@@ -62,11 +62,86 @@ elementos.forEach(elemento => {
                 console.log("ID recebido do PHP:", dados.numero_atomico);
                 console.log("Nome recebido do PHP:", dados.nome);
 
-                document.getElementById("nome").textContent = dados.nome;
-                document.getElementById("simbolo").textContent = dados.simbolo;
-                document.getElementById("numero").textContent = dados.numero_atomico;
+                // ===== CABEÇALHO =====
+
+                document.getElementById("nome").textContent =
+                    dados.nome;
+
+                document.getElementById("simbolo").textContent =
+                    dados.simbolo;
+
+                document.getElementById("numero").textContent =
+                    dados.numero_atomico;
+
+                document.getElementById("classificacao").textContent =
+                    dados.classificacao;
+
+
+                // ===== INFORMAÇÕES GERAIS =====
+
+                document.getElementById("nome-info").textContent =
+                    dados.nome;
+
+                document.getElementById("simbolo-info").textContent =
+                    dados.simbolo;
+
+                document.getElementById("numero-info").textContent =
+                    dados.numero_atomico;
+
+                document.getElementById("massa").textContent =
+                    dados.massa_atomica;
+
+                document.getElementById("grupo").textContent =
+                    dados.grupo;
+
+                document.getElementById("periodo").textContent =
+                    dados.periodo;
+
+                document.getElementById("classificacao-info").textContent =
+                    dados.classificacao;
+
+                document.getElementById("estado-fisico").textContent =
+                    dados.estado_fisico;
+
+
+                // ===== PROPRIEDADES ATÔMICAS =====
+
+                document.getElementById("configuracao").textContent =
+                    dados.configuracao_eletronica;
+
+                document.getElementById("eletronegatividade").textContent =
+                    dados.eletronegatividade;
+
+                document.getElementById("raio-atomico").textContent =
+                    dados.raio_atomico;
+
+                document.getElementById("energia-ionizacao").textContent =
+                    dados.energia_ionizacao;
+
+                document.getElementById("estado-oxidacao").textContent =
+                    dados.estado_oxidacao;
+
+
+                // ===== PROPRIEDADES FÍSICAS =====
+
+                document.getElementById("densidade").textContent =
+                    dados.densidade;
+
+                document.getElementById("ponto-fusao").textContent =
+                    dados.ponto_de_fusao;
+
+                document.getElementById("ponto-ebulicao").textContent =
+                    dados.ponto_de_ebulicao;
+
+                document.getElementById("condutividade").textContent =
+                    dados.condutividade;
+
+
+                // ===== ABRIR MODAL =====
 
                 modal.classList.add("ativo");
+
+                document.body.style.overflow = "hidden";
 
             })
 

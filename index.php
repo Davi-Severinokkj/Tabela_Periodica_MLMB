@@ -984,18 +984,6 @@
 
         </div>
 
-
-        <!-- Descrição -->
-        <div class="secao-modal">
-
-            <h2>Sobre o elemento</h2>
-
-            <p id="descricao">
-                Informações sobre o elemento.
-            </p>
-
-        </div>
-
     </div>
 
 </div>

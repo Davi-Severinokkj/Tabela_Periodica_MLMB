@@ -2,18 +2,23 @@
 
 require("../includes/conexao.php");
 
-$id = $_GET['id'] || null;
+header("Content-Type: application/json; charset=UTF-8");
+
+$id = $_GET['id'] ?? null;
 
 if (!$id) {
+
     echo json_encode([
         "erro" => "ID não informado"
     ]);
+
     exit;
 }
 
 $sql = "SELECT * FROM Elementos WHERE numero_atomico = ?";
 
 $stmt = $conexao->prepare($sql);
+
 $stmt->bind_param("i", $id);
 
 $stmt->execute();
@@ -33,5 +38,8 @@ if ($result->num_rows > 0) {
     ]);
 
 }
+
+$stmt->close();
+$conexao->close();
 
 ?>
