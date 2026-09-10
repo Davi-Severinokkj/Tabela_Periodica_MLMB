@@ -2,6 +2,11 @@
 -- Estrutura completa + 118 elementos
 -- Observação: para elementos sintéticos/superpesados, alguns dados permanecem desconhecidos e foram marcados como NULL.
 
+drop database if exists tabela_periodica;
+create database tabela_periodica;
+
+use tabela_periodica;
+
 DROP TABLE IF EXISTS Elementos;
 
 CREATE TABLE Elementos(

@@ -58,28 +58,28 @@
             </div>
 
             <!-- BORO -->
-            <div data-id="5" class="elemento semi_metais" data-nome="Nome do elemento: Boro" style="grid-column:13; grid-row:2;">
+            <div data-id="5" class="elemento semi_metais familia_do_boro" data-nome="Nome do elemento: Boro" style="grid-column:13; grid-row:2;">
                 <span class="numero">5</span>
                 <a href="#" class="simbolo">B</a>
                 <span class="nome">Boro</span>
             </div>
 
             <!-- CARBONO -->
-            <div data-id="6" class="elemento nao_metais_poliatomicos" data-nome="Nome do elemento: Carbono" style="grid-column:14; grid-row:2;">
+            <div data-id="6" class="elemento nao_metais_poliatomicos familia_do_carbono" data-nome="Nome do elemento: Carbono" style="grid-column:14; grid-row:2;">
                 <span class="numero">6</span>
                 <a href="#" class="simbolo">C</a>
                 <span class="nome">Carbono</span>
             </div>
 
             <!-- NITROGÊNIO -->
-            <div data-id="7" class="elemento nao_metais_diatomicos" data-nome="Nome do elemento: Nitrogênio" style="grid-column:15; grid-row:2;">
+            <div data-id="7" class="elemento nao_metais_diatomicos familia_do_nitrogenio" data-nome="Nome do elemento: Nitrogênio" style="grid-column:15; grid-row:2;">
                 <span class="numero">7</span>
                 <a href="#" class="simbolo">N</a>
                 <span class="nome">Nitrogênio</span>
             </div>
 
             <!-- OXIGÊNIO -->
-            <div data-id="8" class="elemento nao_metais_diatomicos" data-nome="Nome do elemento: Oxigênio" style="grid-column:16; grid-row:2;">
+            <div data-id="8" class="elemento nao_metais_diatomicos calcogenios" data-nome="Nome do elemento: Oxigênio" style="grid-column:16; grid-row:2;">
                 <span class="numero">8</span>
                 <a href="#" class="simbolo">O</a>
                 <span class="nome">Oxigênio</span>
@@ -114,28 +114,28 @@
             </div>
 
             <!-- ALUMÍNIO -->
-            <div data-id="13" class="elemento metais_pos_transicao" data-nome="Nome do elemento: Alumínio" style="grid-column:13; grid-row:3;">
+            <div data-id="13" class="elemento metais_pos_transicao familia_do_boro" data-nome="Nome do elemento: Alumínio" style="grid-column:13; grid-row:3;">
                 <span class="numero">13</span>
                 <a href="#" class="simbolo">Al</a>
                 <span class="nome">Alumínio</span>
             </div>
 
             <!-- SILÍCIO -->
-            <div data-id="14" class="elemento semi_metais" data-nome="Nome do elemento: Silício" style="grid-column:14; grid-row:3;">
+            <div data-id="14" class="elemento semi_metais familia_do_carbono" data-nome="Nome do elemento: Silício" style="grid-column:14; grid-row:3;">
                 <span class="numero">14</span>
                 <a href="#" class="simbolo">Si</a>
                 <span class="nome">Silício</span>
             </div>
 
             <!-- FÓSFORO -->
-            <div data-id="15" class="elemento nao_metais_poliatomicos" style="grid-column:15; grid-row:3;">
+            <div data-id="15" class="elemento nao_metais_poliatomicos familia_do_nitrogenio" style="grid-column:15; grid-row:3;">
                 <span class="numero">15</span>
                 <a href="#" class="simbolo">P</a>
                 <span class="nome">Fósforo</span>
             </div>
 
             <!-- ENXOFRE -->
-            <div data-id="16" class="elemento nao_metais_poliatomicos" style="grid-column:16; grid-row:3;">
+            <div data-id="16" class="elemento nao_metais_poliatomicos calcogenios" style="grid-column:16; grid-row:3;">
                 <span class="numero">16</span>
                 <a href="#" class="simbolo">S</a>
                 <span class="nome">Enxofre</span>
@@ -242,28 +242,28 @@
             </div>
 
             <!-- GÁLIO -->
-            <div data-id="31" class="elemento metais_pos_transicao" style="grid-column:13; grid-row:4;">
+            <div data-id="31" class="elemento metais_pos_transicao familia_do_boro" style="grid-column:13; grid-row:4;">
                 <span class="numero">31</span>
                 <a href="#" class="simbolo">Ga</a>
                 <span class="nome">Gálio</span>
             </div>
 
             <!-- GERMÂNIO -->
-            <div data-id="32" class="elemento semi_metais" style="grid-column:14; grid-row:4;">
+            <div data-id="32" class="elemento semi_metais familia_do_carbono" style="grid-column:14; grid-row:4;">
                 <span class="numero">32</span>
                 <a href="#" class="simbolo">Ge</a>
                 <span class="nome">Germanio</span>
             </div>
 
             <!-- ARSÊNIO -->
-            <div data-id="33" class="elemento semi_metais" style="grid-column:15; grid-row:4;">
+            <div data-id="33" class="elemento semi_metais familia_do_nitrogenio" style="grid-column:15; grid-row:4;">
                 <span class="numero">33</span>
                 <a href="#" class="simbolo">As</a>
                 <span class="nome">Arsênio</span>
             </div>
 
             <!-- SELÊNIO -->
-            <div data-id="34" class="elemento nao_metais_poliatomicos" style="grid-column:16; grid-row:4;">
+            <div data-id="34" class="elemento nao_metais_poliatomicos calcogenios" style="grid-column:16; grid-row:4;">
                 <span class="numero">34</span>
                 <a href="#" class="simbolo">Se</a>
                 <span class="nome">Selênio</span>
@@ -369,28 +369,28 @@
             </div>
 
             <!-- ÍNDIO -->
-            <div data-id="49" class="elemento metais_pos_transicao" style="grid-column:13; grid-row:5;">
+            <div data-id="49" class="elemento metais_pos_transicao familia_do_boro" style="grid-column:13; grid-row:5;">
                 <span class="numero">49</span>
                 <a href="#" class="simbolo">In</a>
                 <span class="nome">Índio</span>
             </div>
 
             <!-- ESTANHO -->
-            <div data-id="50" class="elemento metais_pos_transicao" style="grid-column:14; grid-row:5;">
+            <div data-id="50" class="elemento metais_pos_transicao familia_do_carbono" style="grid-column:14; grid-row:5;">
                 <span class="numero">50</span>
                 <a href="#" class="simbolo">Sn</a>
                 <span class="nome">Estanho</span>
             </div>
 
             <!-- ANTIMÔNIO -->
-            <div data-id="51" class="elemento semi_metais" style="grid-column:15; grid-row:5;">
+            <div data-id="51" class="elemento semi_metais familia_do_nitrogenio" style="grid-column:15; grid-row:5;">
                 <span class="numero">51</span>
                 <a href="#" class="simbolo">Sb</a>
                 <span class="nome">Antimônio</span>
             </div>
 
             <!-- TELÚRIO -->
-            <div data-id="52" class="elemento semi_metais" style="grid-column:16; grid-row:5;">
+            <div data-id="52" class="elemento semi_metais calcogenios" style="grid-column:16; grid-row:5;">
                 <span class="numero">52</span>
                 <a href="#" class="simbolo">Te</a>
                 <span class="nome">Telúrio</span>
@@ -489,28 +489,28 @@
             </div>
 
             <!-- TÁLIO -->
-            <div data-id="81" class="elemento metais_pos_transicao" style="grid-column:13; grid-row:6;">
+            <div data-id="81" class="elemento metais_pos_transicao familia_do_boro" style="grid-column:13; grid-row:6;">
                 <span class="numero">81</span>
                 <a href="#" class="simbolo">Tl</a>
                 <span class="nome">Tálio</span>
             </div>
 
             <!-- CHUMBO -->
-            <div data-id="82" class="elemento metais_pos_transicao" style="grid-column:14; grid-row:6;">
+            <div data-id="82" class="elemento metais_pos_transicao familia_do_carbono" style="grid-column:14; grid-row:6;">
                 <span class="numero">82</span>
                 <a href="#" class="simbolo">Pb</a>
                 <span class="nome">Chumbo</span>
             </div>
 
             <!-- BISMUTO -->
-            <div data-id="83" class="elemento metais_pos_transicao" style="grid-column:15; grid-row:6;">
+            <div data-id="83" class="elemento metais_pos_transicao familia_do_nitrogenio" style="grid-column:15; grid-row:6;">
                 <span class="numero">83</span>
                 <a href="#" class="simbolo">Bi</a>
                 <span class="nome">Bismuto</span>
             </div>
 
             <!-- POLÔNIO -->
-            <div data-id="84" class="elemento metais_pos_transicao" style="grid-column:16; grid-row:6;">
+            <div data-id="84" class="elemento metais_pos_transicao calcogenios" style="grid-column:16; grid-row:6;">
                 <span class="numero">84</span>
                 <a href="#" class="simbolo">Po</a>
                 <span class="nome">Polônio</span>
@@ -610,28 +610,28 @@
             </div>
 
             <!-- NIHÔNIO -->
-            <div data-id="113" class="elemento desconhecidos" style="grid-column:13; grid-row:7;">
+            <div data-id="113" class="elemento desconhecidos familia_do_boro" style="grid-column:13; grid-row:7;">
                 <span class="numero">113</span>
                 <a href="#" class="simbolo">Nh</a>
                 <span class="nome">Nihônio</span>
             </div>
 
             <!-- FLERÓVIO -->
-            <div data-id="114" class="elemento desconhecidos" style="grid-column:14; grid-row:7;">
+            <div data-id="114" class="elemento desconhecidos familia_do_carbono" style="grid-column:14; grid-row:7;">
                 <span class="numero">114</span>
                 <a href="#" class="simbolo">Fl</a>
                 <span class="nome">Fleróvio</span>
             </div>
 
             <!-- MOSCÓVIO -->
-            <div data-id="115" class="elemento desconhecidos" style="grid-column:15; grid-row:7;">
+            <div data-id="115" class="elemento desconhecidos familia_do_nitrogenio" style="grid-column:15; grid-row:7;">
                 <span class="numero">115</span>
                 <a href="#" class="simbolo">Mc</a>
                 <span class="nome">Moscóvio</span>
             </div>
 
             <!-- LIVERMÓRIO -->
-            <div data-id="116" class="elemento desconhecidos" style="grid-column:16; grid-row:7;">
+            <div data-id="116" class="elemento desconhecidos calcogenios" style="grid-column:16; grid-row:7;">
                 <span class="numero">116</span>
                 <a href="#" class="simbolo">Lv</a>
                 <span class="nome">Livermório</span>

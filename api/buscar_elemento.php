@@ -18,18 +18,14 @@ if (!$id) {
 $sql = "SELECT * FROM Elementos WHERE numero_atomico = ?";
 
 $stmt = $conexao->prepare($sql);
-
 $stmt->bind_param("i", $id);
-
 $stmt->execute();
 
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
 
-    $elemento = $result->fetch_assoc();
-
-    echo json_encode($elemento);
+    echo json_encode($result->fetch_assoc());
 
 } else {
 

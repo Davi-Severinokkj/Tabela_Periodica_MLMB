@@ -9,9 +9,8 @@ botao.addEventListener("click", () => {
 
     if (menu.classList.contains("ativo")) {
 
-        document.body.style.overflow = "hidden";
-        document.body.style.position = "relative";
-        document.body.style.zIndex = "9999";
+        document.body.style.overflow = "hidden";        
+        menu.style.zIndex = "9999";
 
 
     } else {
@@ -58,6 +57,7 @@ elementos.forEach(elemento => {
             .then(response => response.json())
 
             .then(dados => {
+                
 
                 console.log("ID recebido do PHP:", dados.numero_atomico);
                 console.log("Nome recebido do PHP:", dados.nome);
@@ -165,16 +165,18 @@ fechar.addEventListener("click", () => {
 });
 
 
-// ===== FECHAR CLICANDO FORA =====
+// ===== FECHAR MENU AO CLICAR FORA =====
 
-window.addEventListener("click", (e) => {
+document.addEventListener("click", (e) => {
 
-    if (e.target === modal) {
+    if (
+        !menu.contains(e.target) &&
+        !botao.contains(e.target)
+    ) {
 
-        modal.classList.remove("ativo");
+        menu.classList.remove("ativo");
 
         document.body.style.overflow = "auto";
-
     }
 
 });

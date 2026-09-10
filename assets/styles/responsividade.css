@@ -1,0 +1,334 @@
+/* =========================================================
+   RESPONSIVIDADE — TABLETS E CELULARES
+   ATÉ 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -------------------------
+       HEADER
+       ------------------------- */
+
+    .header_container {
+        display: grid;
+
+        grid-template-columns: auto 1fr auto;
+
+        align-items: center;
+
+        gap: 10px;
+
+        padding: 8px 10px;
+    }
+
+    .header_container img {
+        width: 80px;
+    }
+
+    /* Esconde o título do header,
+       mas NÃO afeta os h2 do modal */
+    .header_container > h2 {
+        display: none;
+    }
+
+
+    /* -------------------------
+       BOTÕES DO HEADER
+       ------------------------- */
+
+    .menu-area {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-end;
+
+        gap: 6px;
+    }
+
+    #buttonTableP {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+
+        padding: 0.7rem 0.8rem;
+
+        font-size: 12px;
+
+        white-space: nowrap;
+    }
+
+    #buttonMenu {
+        padding: 0.7rem 0.8rem;
+
+        font-size: 15px;
+    }
+
+
+    /* -------------------------
+       PESQUISA
+       ------------------------- */
+
+    .search-container {
+        width: calc(100% - 20px);
+
+        margin: 15px auto;
+    }
+
+    #search {
+        padding: 12px 42px;
+
+        font-size: 14px;
+    }
+
+
+    /* -------------------------
+       MENU
+       ------------------------- */
+
+    #menuDropdown {
+        top: 65px;
+
+        right: 10px;
+
+        width: min(240px, calc(100vw - 20px));
+    }
+
+    #menuDropdown li a {
+        padding: 13px 15px;
+
+        font-size: 14px;
+    }
+
+
+    /* -------------------------
+       TABELA NORMAL
+       ------------------------- */
+
+    .table-periodic {
+        grid-template-columns: repeat(18, minmax(42px, 1fr));
+
+        gap: 3px;
+
+        padding: 20px 10px 30px;
+
+        overflow-x: auto;
+        overflow-y: visible;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .elemento {
+        min-width: 42px;
+
+        border-radius: 6px;
+    }
+
+    .simbolo {
+        font-size: 18px;
+    }
+
+    .numero {
+        top: 4px;
+        left: 5px;
+
+        font-size: 8px;
+    }
+
+    .nome {
+        display: none;
+    }
+
+
+    /* -------------------------
+       FORMATO ALTERNATIVO
+       ------------------------- */
+
+    .table-periodic.form {
+        display: grid;
+
+        grid-template-columns: repeat(4, minmax(60px, 1fr));
+
+        gap: 5px;
+
+        padding: 15px 10px;
+    }
+
+    .table-periodic.form .elemento {
+        width: auto;
+
+        min-width: 0;
+
+        aspect-ratio: 1 / 1;
+    }
+
+
+    /* -------------------------
+       MODAL
+       ------------------------- */
+
+    #modal {
+        padding: 10px;
+    }
+
+    .modal-conteudo {
+        width: 100%;
+
+        max-height: 95vh;
+
+        padding: 20px 15px;
+
+        border-radius: 14px;
+    }
+
+    .modal-cabecalho {
+        gap: 15px;
+
+        padding-right: 25px;
+
+        padding-bottom: 20px;
+
+        margin-bottom: 20px;
+    }
+
+    .simbolo-elemento {
+        width: 75px;
+        height: 75px;
+    }
+
+    .simbolo-elemento #simbolo {
+        font-size: 28px;
+    }
+
+    .simbolo-elemento #numero {
+        font-size: 12px;
+    }
+
+    .informacoes-principais h1 {
+        font-size: 22px;
+    }
+
+    .informacoes-principais p {
+        font-size: 13px;
+    }
+
+    /*
+       IMPORTANTE:
+       aqui NÃO escondemos h2 do modal.
+    */
+
+    .secao-modal h2 {
+        font-size: 18px;
+    }
+
+    .grid-informacoes {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .informacao {
+        padding: 12px;
+    }
+
+    .informacao strong {
+        font-size: 14px;
+    }
+
+    #fechar {
+        top: 8px;
+        right: 10px;
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 27px;
+    }
+
+
+    /* -------------------------
+       FOOTER
+       ------------------------- */
+
+    .footer_container {
+        font-size: 14px;
+
+        padding: 15px 10px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+   ATÉ 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .header_container img {
+        width: 65px;
+    }
+
+    #buttonTableP {
+        padding: 0.65rem 0.7rem;
+
+        font-size: 10px;
+    }
+
+    #buttonMenu {
+        padding: 0.65rem 0.7rem;
+
+        font-size: 14px;
+    }
+
+    .table-periodic {
+        grid-template-columns: repeat(18, minmax(38px, 1fr));
+
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .elemento {
+        min-width: 38px;
+    }
+
+    .simbolo {
+        font-size: 16px;
+    }
+
+    .numero {
+        font-size: 7px;
+    }
+
+    .table-periodic.form {
+        grid-template-columns: repeat(3, minmax(70px, 1fr));
+    }
+
+    .modal-cabecalho {
+        align-items: flex-start;
+    }
+
+    .simbolo-elemento {
+        width: 65px;
+        height: 65px;
+    }
+
+    .simbolo-elemento #simbolo {
+        font-size: 24px;
+    }
+
+    .informacoes-principais h1 {
+        font-size: 19px;
+    }
+
+    .informacoes-principais p {
+        font-size: 12px;
+    }
+
+    .secao-modal h2 {
+        font-size: 17px;
+    }
+}
