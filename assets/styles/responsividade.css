@@ -332,3 +332,78 @@
         font-size: 17px;
     }
 }
+
+/* =========================================================
+   RESPONSIVIDADE DO FOOTER
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .footer_container {
+        margin-top: 40px;
+    }
+
+    .footer_conteudo {
+        padding: 35px 20px 20px;
+    }
+
+    .footer_principal {
+        margin-bottom: 25px;
+    }
+
+    .footer_principal h2 {
+        font-size: 22px;
+    }
+
+    .footer_principal p {
+        font-size: 13px;
+    }
+
+    .footer_info {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .footer_item {
+        min-height: auto;
+        padding: 17px;
+    }
+
+    .footer_final {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer_final span:last-child {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .footer_conteudo {
+        padding: 30px 15px 18px;
+    }
+
+    .footer_principal h2 {
+        font-size: 20px;
+    }
+
+    .footer_principal p {
+        font-size: 12px;
+    }
+
+    .footer_item span {
+        font-size: 11px;
+    }
+
+    .footer_item strong {
+        font-size: 13px;
+    }
+
+    .footer_final {
+        font-size: 11px;
+    }
+}
