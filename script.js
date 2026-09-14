@@ -137,6 +137,12 @@ elementos.forEach(elemento => {
                 document.getElementById("condutividade").textContent =
                     dados.condutividade;
 
+                document.getElementById("camada_valencia").textContent = 
+                    dados.camada_valencia;
+                
+                document.getElementById("eletrons_valencia").textContent =
+                    dados.eletrons_valencia;
+
 
                 // ===== ABRIR MODAL =====
 

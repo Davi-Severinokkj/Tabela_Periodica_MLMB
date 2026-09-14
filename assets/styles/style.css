@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 /* =========================================================
@@ -517,7 +518,7 @@ body {
 }
 
 .metais_de_transicao {
-    background: #DC143C;
+    background: #66CDAA;
 }
 
 .metais_pos_transicao {
@@ -525,14 +526,14 @@ body {
 }
 
 .semi_metais {
-    background: #3CB371;
+    background: #006400;
 }
 
 .nao_metais_poliatomicos {
     background: #9370DB;
 }
 
-.nao_metais_diatomicos {
+.halogenios {
     background: #87CEEB;
 }
 
@@ -541,7 +542,7 @@ body {
 }
 
 .desconhecidos {
-    background: #FF69B4;
+    background: #8B008B;
 }
 
 .lantanideos {
@@ -655,6 +656,7 @@ body {
     color: #222;
 
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+    font-family: 'Nunito', sans-serif;
 
     animation: abrirModal 0.25s ease;
 }
@@ -819,7 +821,7 @@ body {
 
     color: #528053;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Google Sans', sans-serif;
 
     font-size: 20px;
 }

@@ -86,7 +86,7 @@
             </div>
 
             <!-- FLÚOR -->
-            <div data-id="9" class="elemento nao_metais_diatomicos" data-nome="Nome do elemento: Flúor" style="grid-column:17; grid-row:2;">
+            <div data-id="9" class="elemento halogênios nao_metais_diatomicos" data-nome="Nome do elemento: Flúor" style="grid-column:17; grid-row:2;">
                 <span class="numero">9</span>
                 <a href="#" class="simbolo">F</a>
                 <span class="nome">Flúor</span>
@@ -142,7 +142,7 @@
             </div>
 
             <!-- CLORO -->
-            <div data-id="17" class="elemento nao_metais_diatomicos" style="grid-column:17; grid-row:3;">
+            <div data-id="17" class="elemento nao_metais_diatomicos halogênios" style="grid-column:17; grid-row:3;">
                 <span class="numero">17</span>
                 <a href="#" class="simbolo">Cl</a>
                 <span class="nome">Cloro</span>
@@ -270,7 +270,7 @@
             </div>
 
             <!-- BROMO -->
-            <div data-id="35" class="elemento nao_metais_diatomicos" style="grid-column:17; grid-row:4;">
+            <div data-id="35" class="elemento nao_metais_diatomicos halogênios" style="grid-column:17; grid-row:4;">
                 <span class="numero">35</span>
                 <a href="#" class="simbolo">Br</a>
                 <span class="nome">Bromo</span>
@@ -397,7 +397,7 @@
             </div>
 
             <!-- IODO -->
-            <div data-id="53" class="elemento nao_metais_diatomicos" style="grid-column:17; grid-row:5;">
+            <div data-id="53" class="elemento nao_metais_diatomicos halogênios" style="grid-column:17; grid-row:5;">
                 <span class="numero">53</span>
                 <a href="#" class="simbolo">I</a>
                 <span class="nome">Iodo</span>
@@ -517,7 +517,7 @@
             </div>
 
             <!-- ASTATO -->
-            <div data-id="85" class="elemento metais_pos_transicao" style="grid-column:17; grid-row:6;">
+            <div data-id="85" class="elemento semi_metais metais_pos_transicao halogênios" style="grid-column:17; grid-row:6;">
                 <span class="numero">85</span>
                 <a href="#" class="simbolo">At</a>
                 <span class="nome">Astato</span>
@@ -603,7 +603,7 @@
             </div>
 
             <!-- COPERNÍCIO -->
-            <div data-id="112" class="elemento desconhecidos" style="grid-column:12; grid-row:7;">
+            <div data-id="112" class="elemento desconhecidos metais_de_transicao" style="grid-column:12; grid-row:7; background-color: #66CDAA;">
                 <span class="numero">112</span>
                 <a href="#" class="simbolo">Cn</a>
                 <span class="nome">Copernício</span>
@@ -962,6 +962,16 @@
                     <span>Estados de oxidação</span>
                     <strong id="estado-oxidacao"></strong>
                 </div>
+
+                <div class="informacao">
+                    <span>Camada de valência</span>
+                    <strong id="camada_valencia"></strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Quantidade de Eletrons</span>
+                    <strong id="eletrons_valencia"></strong>
+                </div>       
 
             </div>
 
