@@ -407,3 +407,505 @@
         font-size: 11px;
     }
 }
+
+/* =========================================================
+   RESPONSIVIDADE — IPHONE XR / SAFARI
+   Viewport: 414 × 896px
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    /* ---------- CONFIGURAÇÕES GERAIS ---------- */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        min-height: 100vh;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    .header_container {
+        width: 100%;
+        padding: 12px 15px;
+        gap: 10px;
+
+        justify-content: space-between;
+    }
+
+    .header_container img {
+        width: 70px;
+        flex-shrink: 0;
+    }
+
+    .header_container h2 {
+        max-width: 220px;
+
+        font-size: 15px;
+        line-height: 1.2;
+        letter-spacing: -0.3px;
+    }
+
+    .header_container h2::first-line {
+        font-size: 17px;
+    }
+
+    .menu-area {
+        flex-shrink: 0;
+    }
+
+    #buttonMenu {
+        padding: 9px 10px;
+        font-size: 14px;
+    }
+
+
+    /* ---------- PESQUISA ---------- */
+
+    .search-container {
+        width: calc(100% - 30px);
+        margin: 15px auto;
+    }
+
+    #search {
+        padding: 12px 42px;
+        font-size: 14px;
+    }
+
+    .search-icon {
+        left: 13px;
+        font-size: 18px;
+    }
+
+    #limparPesquisa {
+        right: 7px;
+
+        width: 28px;
+        height: 28px;
+
+        font-size: 20px;
+    }
+
+    #resultadoPesquisa {
+        margin: -5px auto 15px;
+        padding: 0 15px;
+
+        font-size: 13px;
+    }
+
+
+    /* ---------- BOTÃO MUDAR TABELA ---------- */
+
+    #buttonTableP {
+        margin: 0 auto 10px;
+
+        padding: 8px 12px;
+
+        font-size: 13px;
+    }
+
+
+    /* ---------- MENU DROPDOWN ---------- */
+
+    #menuDropdown {
+        top: 65px;
+        right: 12px;
+
+        width: 190px;
+        max-width: calc(100vw - 24px);
+    }
+
+    #menuDropdown li a {
+        padding: 11px 14px;
+        font-size: 14px;
+    }
+
+
+    /* ---------- TABELA PERIÓDICA ---------- */
+
+    .table-periodic {
+        width: 100%;
+
+        /*
+         * Mantém as 18 colunas da tabela original,
+         * mas permite rolagem horizontal no celular.
+         */
+        grid-template-columns: repeat(18, 38px);
+
+        gap: 3px;
+
+        padding: 20px 15px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table-periodic::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .table-periodic::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+
+
+    /* ---------- ELEMENTOS DA TABELA ---------- */
+
+    .elemento {
+        width: 38px;
+        min-width: 38px;
+
+        aspect-ratio: 4 / 5;
+
+        border-radius: 6px;
+    }
+
+    .elemento:hover {
+        transform: none;
+    }
+
+    .numero {
+        top: 3px;
+        left: 4px;
+
+        font-size: 9px;
+    }
+
+    .simbolo {
+        font-size: 20px;
+    }
+
+    .nome {
+        margin-top: 3px;
+
+        font-size: 8px;
+
+        line-height: 1;
+    }
+
+
+    /* ---------- MODO ALTERNATIVO ---------- */
+
+    .table-periodic.form {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 4px;
+
+        padding: 15px 10px;
+    }
+
+    .table-periodic.form .elemento {
+        width: calc((100% - 24px) / 5);
+        min-width: 55px;
+        max-width: 70px;
+    }
+
+
+    /* ---------- MODAL ---------- */
+
+    #modal {
+        padding: 10px;
+        align-items: center;
+    }
+
+    .modal-conteudo {
+        width: 100%;
+        max-width: 100%;
+
+        max-height: calc(100vh - 20px);
+
+        padding: 20px 15px;
+
+        border-radius: 14px;
+    }
+
+
+    /* ---------- BOTÃO FECHAR ---------- */
+
+    #fechar {
+        top: 8px;
+        right: 10px;
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 26px;
+    }
+
+
+    /* ---------- CABEÇALHO DO MODAL ---------- */
+
+    .modal-cabecalho {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 12px;
+
+        padding: 10px 25px 18px;
+
+        margin-bottom: 18px;
+
+        text-align: center;
+    }
+
+
+    /* ---------- SÍMBOLO DO ELEMENTO ---------- */
+
+    .simbolo-elemento {
+        width: 80px;
+        height: 80px;
+
+        border-radius: 12px;
+    }
+
+    .simbolo-elemento #simbolo {
+        font-size: 30px;
+    }
+
+    .simbolo-elemento #numero {
+        margin-top: 3px;
+        font-size: 12px;
+    }
+
+
+    /* ---------- INFORMAÇÕES PRINCIPAIS ---------- */
+
+    .informacoes-principais {
+        width: 100%;
+    }
+
+    .informacoes-principais h1 {
+        font-size: 25px;
+        line-height: 1.15;
+
+        word-break: break-word;
+    }
+
+    .informacoes-principais p {
+        margin-top: 5px;
+
+        font-size: 14px;
+    }
+
+
+    /* ---------- SEÇÕES DO MODAL ---------- */
+
+    .secao-modal {
+        margin-bottom: 20px;
+    }
+
+    .secao-modal h2 {
+        margin-bottom: 10px;
+
+        padding-left: 8px;
+
+        font-size: 18px;
+    }
+
+
+    /* ---------- GRID DE INFORMAÇÕES ---------- */
+
+    .grid-informacoes {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+
+    /* ---------- CARDS ---------- */
+
+    .informacao {
+        padding: 11px 12px;
+
+        border-radius: 8px;
+
+        gap: 4px;
+    }
+
+    .informacao span {
+        font-size: 11px;
+    }
+
+    .informacao strong {
+        font-size: 14px;
+        line-height: 1.35;
+    }
+
+
+    /* ---------- CONFIGURAÇÃO ELETRÔNICA ---------- */
+
+    #configuracao {
+        font-size: 12px;
+
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+
+    /* ---------- DESCRIÇÃO ---------- */
+
+    #descricao {
+        padding: 12px;
+
+        font-size: 14px;
+        line-height: 1.5;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer_container {
+        margin-top: 35px;
+    }
+
+    .footer_conteudo {
+        width: 100%;
+
+        padding: 30px 15px 20px;
+    }
+
+    .footer_principal {
+        margin-bottom: 25px;
+    }
+
+    .footer_principal h2 {
+        font-size: 21px;
+    }
+
+    .footer_principal p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* ---------- INFORMAÇÕES DO FOOTER ---------- */
+
+    .footer_info {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        margin-bottom: 25px;
+    }
+
+    .footer_item {
+        min-height: auto;
+
+        padding: 15px;
+    }
+
+    .footer_item span {
+        margin-bottom: 7px;
+
+        font-size: 11px;
+    }
+
+    .footer_item strong {
+        font-size: 13px;
+    }
+
+
+    /* ---------- FOOTER FINAL ---------- */
+
+    .footer_final {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 8px;
+
+        text-align: center;
+
+        font-size: 11px;
+    }
+
+    .footer_final span:last-child {
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   AJUSTES PARA TELAS MUITO PEQUENAS
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+    .header_container h2 {
+        max-width: 170px;
+        font-size: 13px;
+    }
+
+    .header_container h2::first-line {
+        font-size: 15px;
+    }
+
+    .header_container img {
+        width: 60px;
+    }
+
+    #buttonMenu {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .table-periodic {
+        grid-template-columns: repeat(18, 34px);
+    }
+
+    .elemento {
+        width: 34px;
+        min-width: 34px;
+    }
+
+    .simbolo {
+        font-size: 18px;
+    }
+
+    .nome {
+        font-size: 7px;
+    }
+
+    .modal-conteudo {
+        padding: 18px 12px;
+    }
+}
+
+
+/* =========================================================
+   SAFARI IOS — ÁREA SEGURA
+   ========================================================= */
+
+@supports (padding: max(0px)) {
+
+    .header_container {
+        padding-left: max(15px, env(safe-area-inset-left));
+        padding-right: max(15px, env(safe-area-inset-right));
+    }
+
+    #modal {
+        padding-top: max(10px, env(safe-area-inset-top));
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
+    }
+
+    .footer_conteudo {
+        padding-bottom: max(20px, env(safe-area-inset-bottom));
+    }
+}

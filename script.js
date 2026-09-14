@@ -44,8 +44,9 @@ const fechar = document.getElementById("fechar");
 elementos.forEach(elemento => {
 
     elemento.addEventListener("click", () => {
-
+        document.body.style.overflow = "hidden;"
         const numeroAtomico = elemento.dataset.id;
+
 
         console.log("===== CLIQUE =====");
         console.log("Nome clicado:", elemento.querySelector(".nome").textContent);
