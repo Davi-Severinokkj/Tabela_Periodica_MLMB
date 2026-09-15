@@ -15,7 +15,7 @@ if (!$id) {
     exit;
 }
 
-$sql = "SELECT * FROM Elementos WHERE numero_atomico = ?";
+$sql = "SELECT * FROM elementos WHERE numero_atomico = ?";
 
 $stmt = $conexao->prepare($sql);
 $stmt->bind_param("i", $id);

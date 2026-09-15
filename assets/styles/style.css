@@ -390,7 +390,8 @@ body {
 
     display: grid;
 
-    grid-template-columns: repeat(18, minmax(40px, 1fr));
+    grid-template-columns: repeat(19, minmax(40px, 1fr));
+    grid-template-rows: 30px repeat(11, auto);
 
     gap: 4px;
 
@@ -399,6 +400,10 @@ body {
     overflow-x: auto;
 
     color: white;
+}
+
+.wrappers hidden{
+    display: none;
 }
 
 .table-periodic a {
@@ -533,7 +538,7 @@ body {
     background: #9370DB;
 }
 
-.halogenios {
+.halogênios {
     background: #87CEEB;
 }
 

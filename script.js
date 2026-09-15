@@ -9,7 +9,7 @@ botao.addEventListener("click", () => {
 
     if (menu.classList.contains("ativo")) {
 
-        document.body.style.overflow = "hidden";        
+        document.body.style.overflow = "hidden";
         menu.style.zIndex = "9999";
 
 
@@ -28,9 +28,13 @@ let tabelaPeriodica = document.querySelector(".table-periodic");
 
 let botaoTabela = document.querySelector("#buttonTableP");
 
+let wrappers = document.getElementsByClassName("wrappers");
+
 botaoTabela.addEventListener("click", () => {
 
     tabelaPeriodica.classList.toggle("form");
+    wrappers.classList.add("hidden");
+
 
 });
 
@@ -58,7 +62,7 @@ elementos.forEach(elemento => {
             .then(response => response.json())
 
             .then(dados => {
-                
+
 
                 console.log("ID recebido do PHP:", dados.numero_atomico);
                 console.log("Nome recebido do PHP:", dados.nome);
@@ -137,9 +141,9 @@ elementos.forEach(elemento => {
                 document.getElementById("condutividade").textContent =
                     dados.condutividade;
 
-                document.getElementById("camada_valencia").textContent = 
+                document.getElementById("camada_valencia").textContent =
                     dados.camada_valencia;
-                
+
                 document.getElementById("eletrons_valencia").textContent =
                     dados.eletrons_valencia;
 
@@ -208,7 +212,7 @@ links.forEach(link => {
 
         });
 
-// apaga os elementos que NÃO pertencem ao grupo
+        // apaga os elementos que NÃO pertencem ao grupo
         document.querySelectorAll(".elemento").forEach(el => {
 
             if (!el.classList.contains(classe)) {
