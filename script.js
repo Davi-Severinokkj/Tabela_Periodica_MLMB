@@ -165,6 +165,7 @@ elementos.forEach(elemento => {
 });
 
 
+
 // ===== FECHAR NO X =====
 
 fechar.addEventListener("click", () => {
