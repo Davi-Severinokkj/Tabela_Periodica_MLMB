@@ -12,7 +12,6 @@ botao.addEventListener("click", () => {
         document.body.style.overflow = "hidden";
         menu.style.zIndex = "9999";
 
-
     } else {
 
         document.body.style.overflow = "auto";
@@ -22,25 +21,54 @@ botao.addEventListener("click", () => {
 });
 
 
+// ===== ELEMENTOS =====
+
+let elementos = document.querySelectorAll(".elemento");
+
+
 // ===== TROCAR FORMATO DA TABELA =====
 
 let tabelaPeriodica = document.querySelector(".table-periodic");
-
 let botaoTabela = document.querySelector("#buttonTableP");
+let wrappers = document.querySelectorAll(".wrappers");
 
-let wrappers = document.getElementsByClassName("wrappers");
+let ordemOriginal = [...elementos];
 
 botaoTabela.addEventListener("click", () => {
 
-    tabelaPeriodica.classList.toggle("form");
-    wrappers.classList.add("hidden");
+    const modoFormulario =
+        tabelaPeriodica.classList.toggle("form");
 
+    if (modoFormulario) {
+
+        wrappers.forEach(wrapper => {
+            wrapper.classList.add("hidden");
+        });
+
+        [...elementos]
+            .sort((a, b) => {
+                return Number(a.dataset.id) - Number(b.dataset.id);
+            })
+            .forEach(elemento => {
+                tabelaPeriodica.appendChild(elemento);
+            });
+
+    } else {
+
+        ordemOriginal.forEach(elemento => {
+            tabelaPeriodica.appendChild(elemento);
+        });
+
+        wrappers.forEach(wrapper => {
+            wrapper.classList.remove("hidden");
+        });
+
+    }
 
 });
 
-// ===== MODAL =====
 
-const elementos = document.querySelectorAll(".elemento");
+// ===== MODAL =====
 
 const modal = document.getElementById("modal");
 const fechar = document.getElementById("fechar");
@@ -48,14 +76,28 @@ const fechar = document.getElementById("fechar");
 elementos.forEach(elemento => {
 
     elemento.addEventListener("click", () => {
-        document.body.style.overflow = "hidden;"
+
+        document.body.style.overflow = "hidden";
+
         const numeroAtomico = elemento.dataset.id;
 
 
         console.log("===== CLIQUE =====");
-        console.log("Nome clicado:", elemento.querySelector(".nome").textContent);
-        console.log("Símbolo clicado:", elemento.querySelector(".simbolo").textContent);
-        console.log("ID enviado:", numeroAtomico);
+        console.log(
+            "Nome clicado:",
+            elemento.querySelector(".nome").textContent
+        );
+
+        console.log(
+            "Símbolo clicado:",
+            elemento.querySelector(".simbolo").textContent
+        );
+
+        console.log(
+            "ID enviado:",
+            numeroAtomico
+        );
+
 
         fetch(`api/buscar_elemento.php?id=${numeroAtomico}`)
 
@@ -63,9 +105,16 @@ elementos.forEach(elemento => {
 
             .then(dados => {
 
+                console.log(
+                    "ID recebido do PHP:",
+                    dados.numero_atomico
+                );
 
-                console.log("ID recebido do PHP:", dados.numero_atomico);
-                console.log("Nome recebido do PHP:", dados.nome);
+                console.log(
+                    "Nome recebido do PHP:",
+                    dados.nome
+                );
+
 
                 // ===== CABEÇALHO =====
 
@@ -141,6 +190,9 @@ elementos.forEach(elemento => {
                 document.getElementById("condutividade").textContent =
                     dados.condutividade;
 
+
+                // ===== VALÊNCIA =====
+
                 document.getElementById("camada_valencia").textContent =
                     dados.camada_valencia;
 
@@ -157,13 +209,14 @@ elementos.forEach(elemento => {
             })
 
             .catch(erro => {
+
                 console.error("Erro:", erro);
+
             });
 
     });
 
 });
-
 
 
 // ===== FECHAR NO X =====
@@ -189,9 +242,11 @@ document.addEventListener("click", (e) => {
         menu.classList.remove("ativo");
 
         document.body.style.overflow = "auto";
+
     }
 
 });
+
 
 // ===== MENU HAMBÚRGUER =====
 
@@ -206,14 +261,19 @@ links.forEach(link => {
         e.preventDefault();
 
         let classe = link.getAttribute("data-classe");
+
+
         // remove filtros anteriores
+
         document.querySelectorAll(".elemento").forEach(el => {
 
             el.classList.remove("apagado");
 
         });
 
+
         // apaga os elementos que NÃO pertencem ao grupo
+
         document.querySelectorAll(".elemento").forEach(el => {
 
             if (!el.classList.contains(classe)) {
@@ -224,7 +284,9 @@ links.forEach(link => {
 
         });
 
+
         // remove filtro
+
         if (ativo === classe) {
 
             document.querySelectorAll(".elemento").forEach(el => {
@@ -238,23 +300,30 @@ links.forEach(link => {
             document.body.style.overflow = "auto";
 
             return;
+
         }
+
 
         ativo = classe;
 
+
         // remove destaque antigo
+
         document.querySelectorAll(".elemento").forEach(el => {
 
             el.classList.remove("aaaa");
 
         });
 
+
         // adiciona destaque novo
+
         document.querySelectorAll("." + classe).forEach(el => {
 
             el.classList.add("aaaa");
 
         });
+
 
         document.body.style.overflow = "auto";
 
@@ -264,6 +333,7 @@ links.forEach(link => {
 
 });
 
+
 // ===== PESQUISA =====
 
 const search = document.getElementById("search");
@@ -272,6 +342,7 @@ const resultadoPesquisa = document.getElementById("resultadoPesquisa");
 
 
 // Remove acentos e transforma em minúsculo
+
 function normalizarTexto(texto) {
 
     return texto
@@ -284,6 +355,7 @@ function normalizarTexto(texto) {
 
 
 // Função que realiza a pesquisa
+
 function realizarPesquisa() {
 
     const texto = normalizarTexto(search.value);
@@ -292,13 +364,19 @@ function realizarPesquisa() {
 
     elementos.forEach(el => {
 
-        const nome = el.querySelector(".nome")?.textContent || "";
-        const simbolo = el.querySelector(".simbolo")?.textContent || "";
-        const numero = el.dataset.id || "";
+        const nome =
+            el.querySelector(".nome")?.textContent || "";
+
+        const simbolo =
+            el.querySelector(".simbolo")?.textContent || "";
+
+        const numero =
+            el.dataset.id || "";
 
         const conteudo = normalizarTexto(
             `${nome} ${simbolo} ${numero}`
         );
+
 
         if (texto === "") {
 
@@ -322,6 +400,7 @@ function realizarPesquisa() {
 
 
     // Mostra/esconde o botão X
+
     if (texto.length > 0) {
 
         limparPesquisa.style.display = "flex";
@@ -334,6 +413,7 @@ function realizarPesquisa() {
 
 
     // Mensagem
+
     if (texto === "") {
 
         resultadoPesquisa.textContent = "";
@@ -359,6 +439,7 @@ function realizarPesquisa() {
 
 
 // Detecta quando o usuário digita
+
 search.addEventListener("input", realizarPesquisa);
 
 
