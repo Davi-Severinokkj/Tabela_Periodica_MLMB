@@ -1,52 +1,57 @@
 /* =========================================================
-   RESPONSIVIDADE
-   TABELA PERIÓDICA / MODAL / HEADER / FOOTER
-
+   RESPONSIVIDADE — TABELA PERIÓDICA MLMB
    Breakpoints:
-   - Desktop: acima de 1024px
-   - Tablet: até 1024px
-   - Mobile: até 768px
-   - Mobile pequeno: até 480px
-   - Telas muito pequenas: até 380px
+   1440px  → desktop grande
+   1024px  → tablet / notebook
+   768px   → tablet pequeno / mobile
+   425px   → smartphone
+   375px   → smartphone pequeno
+   320px   → smartphone muito pequeno
 
-   iPhone XR:
-   viewport CSS = 414 × 896px
+   IMPORTANTE:
+   - A tabela continua sendo CSS Grid.
+   - O Grid principal mantém as 18 colunas.
+   - Em telas pequenas, a tabela usa scroll horizontal.
+   - A versão completa de Lantanídeos/Actinídeos aparece no desktop.
+   - A versão compacta aparece somente em smartphones.
    ========================================================= */
 
 
 /* =========================================================
-   1. TABLETS
-   ATÉ 1024px
+   1. BASE DE SEGURANÇA
    ========================================================= */
 
-@media screen and (max-width: 1024px) {
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
-    /* -----------------------------------------------------
-       CONFIGURAÇÕES GERAIS
-       ----------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
+/* =========================================================
+   3. NOTEBOOK / TABLET GRANDE — 1024px
+   769px até 1439px
+   ========================================================= */
 
-
-    /* -----------------------------------------------------
-       HEADER
-       ----------------------------------------------------- */
+@media screen and (min-width: 769px) and (max-width: 1439px) {
 
     .header_container {
         width: 100%;
-
-        padding: 10px 15px;
-
+        padding: 10px 18px;
         gap: 15px;
     }
 
     .header_container img {
         width: 85px;
+        height: auto;
     }
 
     .header_container h2 {
@@ -58,47 +63,24 @@
         flex-shrink: 0;
     }
 
-
-    /* -----------------------------------------------------
-       PESQUISA
-       ----------------------------------------------------- */
-
     .search-container {
         width: min(500px, calc(100% - 30px));
-
         margin: 18px auto;
     }
 
-
-    /* -----------------------------------------------------
-       TABELA PERIÓDICA
-       ----------------------------------------------------- */
-
     .table-periodic {
+        width: 100%;
         gap: 4px;
-
         padding: 35px 20px;
-
-        /*
-         * Mantém a estrutura original de 18 colunas.
-         * No tablet, a largura mínima evita elementos
-         * excessivamente pequenos.
-         */
-        grid-template-columns: repeat(
-            18,
-            minmax(42px, 1fr)
-        );
-
+        grid-template-columns: repeat(18, minmax(42px, 1fr));
         overflow-x: auto;
         overflow-y: visible;
-
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
     }
 
     .elemento {
         min-width: 42px;
-
         border-radius: 7px;
     }
 
@@ -109,7 +91,6 @@
     .numero {
         top: 4px;
         left: 6px;
-
         font-size: 9px;
     }
 
@@ -117,33 +98,30 @@
         font-size: 10px;
     }
 
+    .descricao_elementos {
+        display: flex;
+    }
 
-    /* -----------------------------------------------------
-       MODO ALTERNATIVO
-       ----------------------------------------------------- */
+    .descricao_elementos_celular {
+        display: none;
+    }
+
+    .descricao_elementos p.simbolo {
+        font-size: 0.7rem;
+    }
 
     .table-periodic.form {
         display: grid;
-
-        grid-template-columns:
-            repeat(6, minmax(60px, 1fr));
-
+        grid-template-columns: repeat(6, minmax(60px, 1fr));
         gap: 6px;
-
         padding: 20px;
     }
 
     .table-periodic.form .elemento {
         width: auto;
         min-width: 0;
-
         aspect-ratio: 1 / 1;
     }
-
-
-    /* -----------------------------------------------------
-       MODAL
-       ----------------------------------------------------- */
 
     #modal {
         padding: 15px;
@@ -151,17 +129,13 @@
 
     .modal-conteudo {
         width: min(900px, 100%);
-
         max-height: 92vh;
-
         padding: 25px 20px;
-
         border-radius: 16px;
     }
 
     .modal-cabecalho {
         gap: 20px;
-
         padding-bottom: 20px;
         margin-bottom: 20px;
     }
@@ -184,16 +158,9 @@
     }
 
     .grid-informacoes {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
     }
-
-
-    /* -----------------------------------------------------
-       FOOTER
-       ----------------------------------------------------- */
 
     .footer_conteudo {
         padding: 40px 25px 25px;
@@ -210,204 +177,172 @@
 
 
 /* =========================================================
-   2. CELULARES
-   ATÉ 768px
+   4. TABLET / MOBILE GRANDE — 768px
+   426px até 768px
    ========================================================= */
 
-@media screen and (max-width: 768px) {
-
-    /* -----------------------------------------------------
-       CONFIGURAÇÕES GERAIS
-       ----------------------------------------------------- */
+@media screen and (min-width: 426px) and (max-width: 768px) {
 
     html,
     body {
         width: 100%;
         max-width: 100%;
-
-        margin: 0;
-        padding: 0;
-
         overflow-x: hidden;
     }
 
-    body {
-        min-height: 100vh;
-    }
-
-
-    /* -----------------------------------------------------
-       HEADER
-       ----------------------------------------------------- */
+    /* ---------- HEADER ---------- */
 
     .header_container {
         display: grid;
-
-        grid-template-columns:
-            auto 1fr auto;
-
+        grid-template-columns: auto 1fr auto;
         align-items: center;
-
         gap: 8px;
-
         width: 100%;
-
         padding: 10px 12px;
     }
 
-    /*
-     * Esconde SOMENTE o título do header.
-     * Não interfere nos h2 existentes dentro do modal.
-     */
-    .header_container > h2 {
+    .header_container>h2 {
         display: none;
     }
 
     .header_container img {
         width: 72px;
-
         height: auto;
-
-        flex-shrink: 0;
     }
-
-
-    /* -----------------------------------------------------
-       BOTÕES DO HEADER
-       ----------------------------------------------------- */
 
     .menu-area {
         display: flex;
-
         align-items: center;
         justify-content: flex-end;
-
         gap: 6px;
-
         flex-shrink: 0;
     }
 
-    #buttonTableP {
+    #buttonTableP,
+    #buttonMenu {
         display: inline-flex;
-
         align-items: center;
         justify-content: center;
-
         margin: 0;
-
-        padding: 9px 11px;
-
-        font-size: 12px;
-
         white-space: nowrap;
+    }
+
+    #buttonTableP {
+        padding: 9px 11px;
+        font-size: 12px;
     }
 
     #buttonMenu {
-        display: inline-flex;
-
-        align-items: center;
-        justify-content: center;
-
         padding: 9px 11px;
-
         font-size: 14px;
-
-        white-space: nowrap;
     }
 
-
-    /* -----------------------------------------------------
-       PESQUISA
-       ----------------------------------------------------- */
+    /* ---------- PESQUISA ---------- */
 
     .search-container {
         width: calc(100% - 24px);
-
         margin: 15px auto;
     }
 
     #search {
         width: 100%;
-
         padding: 12px 42px;
-
         font-size: 14px;
-
         border-radius: 11px;
     }
 
     .search-icon {
         left: 13px;
-
         font-size: 18px;
     }
 
     #limparPesquisa {
         right: 7px;
-
         width: 28px;
         height: 28px;
-
         font-size: 20px;
     }
 
     #resultadoPesquisa {
         margin: -5px auto 15px;
-
         padding: 0 12px;
-
         font-size: 13px;
     }
 
-
-    /* -----------------------------------------------------
-       MENU DROPDOWN
-       ----------------------------------------------------- */
+    /* ---------- MENU ---------- */
 
     #menuDropdown {
         top: 62px;
         right: 10px;
-
         width: 210px;
         max-width: calc(100vw - 20px);
     }
 
     #menuDropdown li a {
         padding: 12px 14px;
-
         font-size: 14px;
     }
 
+    /* ---------- LEGENDA / CARD ---------- */
 
-    /* -----------------------------------------------------
-       TABELA NORMAL
-       ----------------------------------------------------- */
+    .legend_container {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        border-radius: 30px;
+        padding: 30px;
+    }
+
+    .info-card {
+        width: 92%;
+        flex-direction: column;
+        gap: 30px;
+        padding: 25px 15px;
+    }
+
+    .elemento-exemplo {
+        width: 130px;
+        height: 150px;
+    }
+
+    .simbolo-exemplo {
+        font-size: 3rem;
+    }
+
+    .info-linhas {
+        width: 100%;
+    }
+
+    .info-linha {
+        align-items: flex-start;
+    }
+
+    .linha {
+        width: 30px;
+        margin-top: 10px;
+    }
+
+    .info-texto strong {
+        font-size: 0.95rem;
+    }
+
+    .info-texto p {
+        font-size: 0.8rem;
+    }
+
+    /* ---------- TABELA ---------- */
 
     .table-periodic {
         width: 100%;
-
-        /*
-         * As 18 colunas continuam existindo.
-         * A tabela passa a ter scroll horizontal.
-         */
-        grid-template-columns:
-            repeat(18, 40px);
-
+        grid-template-columns: repeat(18, 40px);
         gap: 3px;
-
         padding: 20px 12px 30px;
-
         overflow-x: auto;
         overflow-y: hidden;
-
         -webkit-overflow-scrolling: touch;
-
         scrollbar-width: thin;
     }
 
-    /*
-     * Pequeno indicador visual de scroll.
-     */
     .table-periodic::-webkit-scrollbar {
         height: 5px;
     }
@@ -418,22 +353,16 @@
 
     .table-periodic::-webkit-scrollbar-thumb {
         background: rgba(0, 0, 0, 0.25);
-
         border-radius: 10px;
     }
 
     .elemento {
         width: 40px;
         min-width: 40px;
-
         aspect-ratio: 4 / 5;
-
         border-radius: 6px;
     }
 
-    /*
-     * Hover não faz muito sentido em touchscreen.
-     */
     .elemento:hover {
         transform: none;
     }
@@ -441,7 +370,6 @@
     .numero {
         top: 3px;
         left: 4px;
-
         font-size: 8px;
     }
 
@@ -449,47 +377,44 @@
         font-size: 19px;
     }
 
-    /*
-     * O nome fica escondido para preservar
-     * a legibilidade do símbolo.
-     */
     .nome {
         display: none;
     }
 
+    /* Desktop: texto completo */
+    .descricao_elementos {
+        display: none;
+    }
 
-    /* -----------------------------------------------------
-       MODO ALTERNATIVO
-       ----------------------------------------------------- */
+    .descricao_elementos_celular {
+        display: flex;
+    }
+
+    .descricao_elementos_celular p.simbolo {
+        font-size: 0.6rem;
+    }
+
+
+    /* ---------- MODO ALTERNATIVO ---------- */
 
     .table-periodic.form {
         display: grid;
-
-        grid-template-columns:
-            repeat(4, minmax(0, 1fr));
-
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 6px;
-
         width: 100%;
-
         padding: 15px 12px;
     }
 
     .table-periodic.form .elemento {
         width: 100%;
         min-width: 0;
-
         aspect-ratio: 1 / 1;
     }
 
-
-    /* -----------------------------------------------------
-       MODAL
-       ----------------------------------------------------- */
+    /* ---------- MODAL ---------- */
 
     #modal {
         padding: 10px;
-
         align-items: center;
         justify-content: center;
     }
@@ -497,62 +422,34 @@
     .modal-conteudo {
         width: 100%;
         max-width: 100%;
-
         max-height: calc(100vh - 20px);
-
         padding: 25px 15px;
-
         border-radius: 14px;
-
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
 
-
-    /* -----------------------------------------------------
-       BOTÃO FECHAR
-       ----------------------------------------------------- */
-
     #fechar {
         top: 8px;
         right: 9px;
-
         width: 34px;
         height: 34px;
-
         font-size: 27px;
     }
 
-
-    /* -----------------------------------------------------
-       CABEÇALHO DO MODAL
-       ----------------------------------------------------- */
-
     .modal-cabecalho {
         flex-direction: column;
-
         align-items: center;
         justify-content: center;
-
         gap: 12px;
-
-        padding:
-                10px 30px 18px;
-
+        padding: 10px 30px 18px;
         margin-bottom: 18px;
-
         text-align: center;
     }
-
-
-    /* -----------------------------------------------------
-       SÍMBOLO DO MODAL
-       ----------------------------------------------------- */
 
     .simbolo-elemento {
         width: 78px;
         height: 78px;
-
         border-radius: 12px;
     }
 
@@ -562,44 +459,27 @@
 
     .simbolo-elemento #numero {
         margin-top: 3px;
-
         font-size: 12px;
     }
-
-
-    /* -----------------------------------------------------
-       INFORMAÇÕES PRINCIPAIS
-       ----------------------------------------------------- */
 
     .informacoes-principais {
         width: 100%;
         min-width: 0;
-
         text-align: center;
     }
 
     .informacoes-principais h1 {
         margin: 0;
-
         font-size: 24px;
-
         line-height: 1.15;
-
         overflow-wrap: break-word;
     }
 
     .informacoes-principais p {
         margin-top: 5px;
-
         font-size: 14px;
-
         line-height: 1.4;
     }
-
-
-    /* -----------------------------------------------------
-       SEÇÕES DO MODAL
-       ----------------------------------------------------- */
 
     .secao-modal {
         margin-bottom: 20px;
@@ -607,28 +487,18 @@
 
     .secao-modal h2 {
         margin-bottom: 10px;
-
         padding-left: 8px;
-
         font-size: 18px;
     }
 
-
-    /* -----------------------------------------------------
-       GRID DO MODAL
-       ----------------------------------------------------- */
-
     .grid-informacoes {
         grid-template-columns: 1fr;
-
         gap: 8px;
     }
 
     .informacao {
         padding: 12px;
-
         border-radius: 9px;
-
         gap: 4px;
     }
 
@@ -638,48 +508,26 @@
 
     .informacao strong {
         font-size: 14px;
-
         line-height: 1.4;
-
         overflow-wrap: anywhere;
     }
-
-
-    /* -----------------------------------------------------
-       CONFIGURAÇÃO ELETRÔNICA
-       ----------------------------------------------------- */
 
     #configuracao {
         font-size: 12px;
-
         line-height: 1.5;
-
         overflow-x: auto;
-
         white-space: normal;
-
         overflow-wrap: anywhere;
     }
 
-
-    /* -----------------------------------------------------
-       DESCRIÇÃO
-       ----------------------------------------------------- */
-
     #descricao {
         padding: 12px;
-
         font-size: 14px;
-
         line-height: 1.55;
-
         overflow-wrap: break-word;
     }
 
-
-    /* -----------------------------------------------------
-       FOOTER
-       ----------------------------------------------------- */
+    /* ---------- FOOTER ---------- */
 
     .footer_container {
         margin-top: 40px;
@@ -687,7 +535,6 @@
 
     .footer_conteudo {
         width: 100%;
-
         padding: 35px 18px 22px;
     }
 
@@ -701,48 +548,37 @@
 
     .footer_principal p {
         font-size: 13px;
-
         line-height: 1.65;
     }
 
     .footer_info {
         grid-template-columns: 1fr;
-
         gap: 10px;
-
         margin-bottom: 25px;
     }
 
     .footer_item {
         min-height: auto;
-
         padding: 16px;
     }
 
     .footer_item span {
         margin-bottom: 8px;
-
         font-size: 11px;
     }
 
     .footer_item strong {
         font-size: 13px;
-
         line-height: 1.5;
-
         overflow-wrap: anywhere;
     }
 
     .footer_final {
         flex-direction: column;
-
         align-items: center;
         justify-content: center;
-
         gap: 8px;
-
         text-align: center;
-
         font-size: 11px;
     }
 
@@ -753,25 +589,14 @@
 
 
 /* =========================================================
-   3. CELULARES
-   ATÉ 480px
-
-   Inclui:
-   - iPhone XR
-   - iPhone 11
-   - iPhone 12/13/14
-   - maioria dos Androids compactos
+   5. SMARTPHONE — 425px
+   376px até 425px
    ========================================================= */
 
-@media screen and (max-width: 480px) {
-
-    /* -----------------------------------------------------
-       HEADER
-       ----------------------------------------------------- */
+@media screen and (min-width: 376px) and (max-width: 425px) {
 
     .header_container {
         padding: 10px;
-
         gap: 6px;
     }
 
@@ -785,46 +610,29 @@
 
     #buttonTableP {
         padding: 8px 9px;
-
         font-size: 10px;
     }
 
     #buttonMenu {
         padding: 8px 9px;
-
         font-size: 13px;
     }
 
-
-    /* -----------------------------------------------------
-       PESQUISA
-       ----------------------------------------------------- */
-
     .search-container {
         width: calc(100% - 20px);
-
         margin: 13px auto;
     }
 
     #search {
         padding: 11px 40px;
-
         font-size: 13px;
     }
 
-
-    /* -----------------------------------------------------
-       TABELA
-       ----------------------------------------------------- */
-
+    /* Tabela continua Grid + scroll horizontal */
     .table-periodic {
-        grid-template-columns:
-            repeat(18, 38px);
-
+        grid-template-columns: repeat(18, 38px);
         gap: 3px;
-
-        padding:
-                18px 10px 28px;
+        padding: 18px 10px 28px;
     }
 
     .elemento {
@@ -839,46 +647,46 @@
     .numero {
         top: 3px;
         left: 4px;
-
         font-size: 8px;
     }
 
+    .nome {
+        display: none;
+    }
 
-    /* -----------------------------------------------------
-       MODO ALTERNATIVO
-       ----------------------------------------------------- */
+    /* Troca correta das descrições */
+    .descricao_elementos {
+        display: none;
+    }
+
+    .descricao_elementos_celular {
+        display: flex;
+    }
+
+    .descricao_elementos_celular p.simbolo {
+        font-size: 0.6rem;
+    }
 
     .table-periodic.form {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 6px;
-
         padding: 14px 10px;
     }
 
-
-    /* -----------------------------------------------------
-       MODAL
-       ----------------------------------------------------- */
-
+    /* Modal */
     #modal {
         padding: 8px;
     }
 
     .modal-conteudo {
         max-height: calc(100vh - 16px);
-
         padding: 23px 13px;
-
         border-radius: 13px;
     }
 
     .modal-cabecalho {
         gap: 10px;
-
-        padding:
-                10px 25px 17px;
+        padding: 10px 25px 17px;
     }
 
     .simbolo-elemento {
@@ -916,18 +724,12 @@
 
     #descricao {
         padding: 11px;
-
         font-size: 13px;
     }
 
-
-    /* -----------------------------------------------------
-       FOOTER
-       ----------------------------------------------------- */
-
+    /* Footer */
     .footer_conteudo {
-        padding:
-                30px 14px 18px;
+        padding: 30px 14px 18px;
     }
 
     .footer_principal h2 {
@@ -953,70 +755,54 @@
 
 
 /* =========================================================
-   4. TELAS MUITO PEQUENAS
-   ATÉ 380px
+   6. SMARTPHONE PEQUENO — 375px
+   321px até 375px
    ========================================================= */
 
-@media screen and (max-width: 380px) {
-
-    /* -----------------------------------------------------
-       HEADER
-       ----------------------------------------------------- */
+@media screen and (min-width: 321px) and (max-width: 375px) {
 
     .header_container {
         padding: 8px;
-
-        gap: 4px;
+        gap: 5px;
     }
 
     .header_container img {
-        width: 58px;
+        width: 60px;
+    }
+
+    .menu-area {
+        gap: 3px;
     }
 
     #buttonTableP {
         padding: 7px 8px;
-
         font-size: 9px;
     }
 
     #buttonMenu {
         padding: 7px 8px;
-
         font-size: 12px;
     }
-
-
-    /* -----------------------------------------------------
-       PESQUISA
-       ----------------------------------------------------- */
 
     .search-container {
         width: calc(100% - 16px);
+        margin: 12px auto;
     }
 
     #search {
+        padding: 10px 38px;
         font-size: 12px;
     }
 
-
-    /* -----------------------------------------------------
-       TABELA
-       ----------------------------------------------------- */
-
     .table-periodic {
-        grid-template-columns:
-            repeat(18, 34px);
-
+        grid-template-columns: repeat(18, 34px);
         gap: 3px;
-
-        padding-left: 8px;
-        padding-right: 8px;
+        padding: 16px 8px 26px;
     }
 
     .elemento {
         width: 34px;
         min-width: 34px;
-
         border-radius: 5px;
     }
 
@@ -1025,37 +811,37 @@
     }
 
     .numero {
+        top: 3px;
+        left: 3px;
         font-size: 7px;
     }
 
+    .descricao_elementos {
+        display: none;
+    }
 
-    /* -----------------------------------------------------
-       MODO ALTERNATIVO
-       ----------------------------------------------------- */
+    .descricao_elementos_celular {
+        display: flex;
+    }
+
+    .descricao_elementos_celular p.simbolo {
+        font-size: 0.55rem;
+    }
 
     .table-periodic.form {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 4px;
-
         padding: 12px 8px;
     }
 
-
-    /* -----------------------------------------------------
-       MODAL
-       ----------------------------------------------------- */
-
+    /* Modal */
     #modal {
         padding: 6px;
     }
 
     .modal-conteudo {
         max-height: calc(100vh - 12px);
-
         padding: 20px 11px;
-
         border-radius: 12px;
     }
 
@@ -1093,14 +879,9 @@
         font-size: 12px;
     }
 
-
-    /* -----------------------------------------------------
-       FOOTER
-       ----------------------------------------------------- */
-
+    /* Footer */
     .footer_conteudo {
-        padding:
-                25px 10px 16px;
+        padding: 25px 10px 16px;
     }
 
     .footer_principal h2 {
@@ -1130,52 +911,270 @@
 
 
 /* =========================================================
-   5. SAFARI / iOS
-   SAFE AREA
+   7. SMARTPHONE MUITO PEQUENO — 320px
+   até 320px
    ========================================================= */
 
-@supports (padding: max(0px)) {
+@media screen and (max-width: 320px) {
 
     .header_container {
-        padding-left:
-                max(10px, env(safe-area-inset-left));
-
-        padding-right:
-                max(10px, env(safe-area-inset-right));
+        padding: 7px;
+        gap: 3px;
     }
 
+    .header_container img {
+        width: 54px;
+    }
+
+    .menu-area {
+        gap: 2px;
+    }
+
+    #buttonTableP {
+        padding: 6px 7px;
+        font-size: 8px;
+    }
+
+    #buttonMenu {
+        padding: 6px 7px;
+        font-size: 11px;
+    }
+
+    .search-container {
+        width: calc(100% - 14px);
+        margin: 10px auto;
+    }
+
+    #search {
+        padding: 9px 35px;
+        font-size: 11px;
+        border-radius: 9px;
+    }
+
+    .search-icon {
+        left: 10px;
+        font-size: 16px;
+    }
+
+    #limparPesquisa {
+        right: 5px;
+        width: 25px;
+        height: 25px;
+        font-size: 18px;
+    }
+
+    #resultadoPesquisa {
+        font-size: 11px;
+        padding: 0 8px;
+    }
+
+    /* Tabela */
+    .table-periodic {
+        grid-template-columns: repeat(18, 31px);
+        gap: 2px;
+        padding: 14px 6px 22px;
+    }
+
+    .elemento {
+        width: 31px;
+        min-width: 31px;
+        border-radius: 4px;
+    }
+
+    .simbolo {
+        font-size: 14px;
+    }
+
+    .numero {
+        top: 2px;
+        left: 2px;
+        font-size: 6px;
+    }
+
+    .descricao_elementos {
+        display: none;
+    }
+
+    .descricao_elementos_celular {
+        display: flex;
+    }
+
+    .descricao_elementos_celular p.simbolo {
+        font-size: 0.5rem;
+        line-height: 1;
+    }
+
+    /* Modo alternativo */
+    .table-periodic.form {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 3px;
+        padding: 10px 6px;
+    }
+
+    .table-periodic.form .elemento {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Menu */
+    #menuDropdown {
+        top: 55px;
+        right: 6px;
+        width: 190px;
+        max-width: calc(100vw - 12px);
+    }
+
+    #menuDropdown li a {
+        padding: 10px 11px;
+        font-size: 12px;
+    }
+
+    /* Modal */
     #modal {
-        padding-top:
-                max(8px, env(safe-area-inset-top));
-
-        padding-bottom:
-                max(8px, env(safe-area-inset-bottom));
-
-        padding-left:
-                max(8px, env(safe-area-inset-left));
-
-        padding-right:
-                max(8px, env(safe-area-inset-right));
+        padding: 4px;
     }
 
+    .modal-conteudo {
+        max-height: calc(100vh - 8px);
+        padding: 18px 9px;
+        border-radius: 10px;
+    }
+
+    #fechar {
+        top: 6px;
+        right: 6px;
+        width: 30px;
+        height: 30px;
+        font-size: 23px;
+    }
+
+    .modal-cabecalho {
+        gap: 8px;
+        padding: 8px 15px 14px;
+        margin-bottom: 14px;
+    }
+
+    .simbolo-elemento {
+        width: 56px;
+        height: 56px;
+    }
+
+    .simbolo-elemento #simbolo {
+        font-size: 21px;
+    }
+
+    .simbolo-elemento #numero {
+        font-size: 10px;
+    }
+
+    .informacoes-principais h1 {
+        font-size: 18px;
+    }
+
+    .informacoes-principais p {
+        font-size: 11px;
+    }
+
+    .secao-modal {
+        margin-bottom: 15px;
+    }
+
+    .secao-modal h2 {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    .grid-informacoes {
+        gap: 6px;
+    }
+
+    .informacao {
+        padding: 9px;
+        gap: 3px;
+    }
+
+    .informacao span {
+        font-size: 10px;
+    }
+
+    .informacao strong {
+        font-size: 11px;
+        line-height: 1.3;
+    }
+
+    #configuracao {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    #descricao {
+        padding: 9px;
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    /* Footer */
     .footer_conteudo {
-        padding-bottom:
-                max(18px, env(safe-area-inset-bottom));
+        padding: 22px 8px 14px;
+    }
+
+    .footer_principal h2 {
+        font-size: 16px;
+    }
+
+    .footer_principal p {
+        font-size: 10px;
+    }
+
+    .footer_item {
+        padding: 10px;
+    }
+
+    .footer_item span {
+        font-size: 9px;
+    }
+
+    .footer_item strong {
+        font-size: 10px;
+    }
+
+    .footer_final {
+        font-size: 8px;
     }
 }
 
 
 /* =========================================================
-   6. DISPOSITIVOS COM TOUCH
-   Remove comportamentos exclusivos de mouse
+   8. SAFARI / iOS — SAFE AREA
+   ========================================================= */
+
+@supports (padding: max(0px)) {
+
+    .header_container {
+        padding-left: max(8px, env(safe-area-inset-left));
+        padding-right: max(8px, env(safe-area-inset-right));
+    }
+
+    #modal {
+        padding-top: max(4px, env(safe-area-inset-top));
+        padding-bottom: max(4px, env(safe-area-inset-bottom));
+        padding-left: max(4px, env(safe-area-inset-left));
+        padding-right: max(4px, env(safe-area-inset-right));
+    }
+
+    .footer_conteudo {
+        padding-bottom: max(14px, env(safe-area-inset-bottom));
+    }
+}
+
+
+/* =========================================================
+   9. TOUCHSCREEN
    ========================================================= */
 
 @media (hover: none) and (pointer: coarse) {
 
-    .elemento:hover {
-        transform: none;
-    }
-
+    .elemento:hover,
     #buttonMenu:hover,
     #buttonTableP:hover,
     #fechar:hover {

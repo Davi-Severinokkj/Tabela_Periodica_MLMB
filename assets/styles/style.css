@@ -25,7 +25,7 @@ body {
 
     font-family: 'Google Sans', sans-serif;
 
-    background: antiquewhite;
+    background: rgb(235, 235, 235);
     color: #111;
 
     min-height: 100vh;
@@ -897,23 +897,6 @@ body {
 }
 
 
-/* DESCRIÇÃO */
-
-#descricao {
-    margin: 0;
-
-    padding: 15px;
-
-    border-radius: 10px;
-
-    background: #f5f5f5;
-
-    color: #555;
-
-    line-height: 1.6;
-}
-
-
 /* =========================================================
    SCROLLBAR DO MODAL
    ========================================================= */
@@ -1054,4 +1037,303 @@ body {
 
 .footer_final span:last-child {
     text-align: right;
+}
+
+/* =========================================================
+   LEGENDA
+========================================================= */
+
+.legend {
+    width: 100%;
+    padding: 30px 0;
+}
+
+.legend_container {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px 25px;
+
+    background-color: white;
+}
+
+.descricao_elementos_celular {
+    display: none;
+}
+
+.descricao_elementos p.simbolo {
+    font-size: 0.7rem;
+}
+
+/* ITEM DA LEGENDA */
+
+.legend_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+/* QUADRADO DE COR */
+
+.legend_class {
+    width: 20px;
+    height: 20px;
+
+    border-radius: 5px;
+
+    flex-shrink: 0;
+}
+
+
+/* TEXTO */
+
+.name_element {
+    display: flex;
+    align-items: center;
+
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    color: #333;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CORES
+========================================================= */
+
+.legend_metais_alcalinos {
+    background-color: #A52A2A;
+}
+
+.legend_alcalino_terrosos {
+    background-color: #D2691E;
+}
+
+.legend_metais_transicao {
+    background-color: #DAA520;
+}
+
+.legend_pos_transicao {
+    background-color: #808080;
+}
+
+.legend_metaloides {
+    background-color: #4682B4;
+}
+
+.legend_nao_metais {
+    background-color: #3CB371;
+}
+
+.legend_halogenios {
+    background-color: #9370DB;
+}
+
+.legend_gases_nobres {
+    background-color: #6495ED;
+}
+
+.legend_lantanideos {
+    background-color: #FF69B4;
+}
+
+.legend_actinideos {
+    background-color: #CD5C5C;
+}
+
+/* =========================================================
+   INFORMAÇÕES DO ELEMENTO
+========================================================= */
+
+.info-elemento {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.info-card {
+    width: 90%;
+    max-width: 900px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 45px;
+
+    padding: 30px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   ELEMENTO DE EXEMPLO
+========================================================= */
+
+.elemento-exemplo {
+    width: 150px;
+    height: 170px;
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 3px solid #222;
+    border-radius: 8px;
+
+    background-color: #fff;
+}
+
+
+/* Número atômico */
+
+.numero-exemplo {
+    position: absolute;
+
+    top: 10px;
+    left: 12px;
+
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    color: #222;
+}
+
+
+/* Símbolo */
+
+.simbolo-exemplo {
+    margin-top: 35px;
+
+    font-size: 3.5rem;
+    font-weight: 700;
+
+    line-height: 1;
+
+    color: #222;
+}
+
+
+/* Nome */
+
+.nome-exemplo {
+    margin-top: 12px;
+
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+/* Peso */
+
+.massa-exemplo {
+    margin-top: 10px;
+
+    font-size: 0.95rem;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+
+.info-linhas {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+.info-linha {
+    display: flex;
+    align-items: center;
+
+    min-height: 45px;
+}
+
+
+.linha {
+    width: 45px;
+    height: 2px;
+
+    margin-right: 15px;
+
+    position: relative;
+
+    background-color: #2163d1;
+}
+
+
+/* ponta da linha */
+
+.linha::after {
+    content: "";
+
+    position: absolute;
+
+    right: -1px;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    border-top: 2px solid #2163d1;
+    border-right: 2px solid #2163d1;
+
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+.info-texto {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.info-texto strong {
+    font-size: 1rem;
+    font-weight: 700;
+
+    color: #172b4d;
+}
+
+
+.info-texto p {
+    margin: 0;
+
+    font-size: 0.85rem;
+    line-height: 1.4;
+
+    color: #555;
 }

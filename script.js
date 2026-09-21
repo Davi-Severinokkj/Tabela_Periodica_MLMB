@@ -31,6 +31,7 @@ let elementos = document.querySelectorAll(".elemento");
 let tabelaPeriodica = document.querySelector(".table-periodic");
 let botaoTabela = document.querySelector("#buttonTableP");
 let wrappers = document.querySelectorAll(".wrappers");
+let descricao_elementos = document.querySelectorAll(".descricao_elementos");
 
 let ordemOriginal = [...elementos];
 
@@ -43,6 +44,11 @@ botaoTabela.addEventListener("click", () => {
 
         wrappers.forEach(wrapper => {
             wrapper.classList.add("hidden");
+
+        });
+
+        descricao_elementos.forEach(descricao => {
+            descricao.style.display = "none";
         });
 
         [...elementos]
@@ -61,6 +67,10 @@ botaoTabela.addEventListener("click", () => {
 
         wrappers.forEach(wrapper => {
             wrapper.classList.remove("hidden");
+        });
+
+        descricao_elementos.forEach(descricao => {
+            descricao.style.display = "grid";
         });
 
     }

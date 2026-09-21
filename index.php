@@ -22,41 +22,130 @@
 
     <p id="resultadoPesquisa"></p>
 
+    <section class="info-elemento">
+
+        <div class="info-card">
+
+            <div class="elemento-exemplo">
+
+                <span class="numero-exemplo">3</span>
+
+                <span class="simbolo-exemplo">Li</span>
+
+                <span class="nome-exemplo">Lítio</span>
+
+                <span class="massa-exemplo">6,94 u</span>
+
+            </div>
+
+            <div class="info-linhas">
+
+                <div class="info-linha">
+                    <span class="linha"></span>
+
+                    <div class="info-texto">
+                        <strong>Número atômico</strong>
+                        <p>Indica a quantidade de prótons no núcleo do átomo.</p>
+                    </div>
+                </div>
+
+
+                <div class="info-linha">
+                    <span class="linha"></span>
+
+                    <div class="info-texto">
+                        <strong>Símbolo químico</strong>
+                        <p>Representa o elemento na tabela periódica.</p>
+                    </div>
+                </div>
+
+
+                <div class="info-linha">
+                    <span class="linha"></span>
+
+                    <div class="info-texto">
+                        <strong>Nome</strong>
+                        <p>Nome completo do elemento.</p>
+                    </div>
+                </div>
+
+
+                <div class="info-linha">
+                    <span class="linha"></span>
+
+                    <div class="info-texto">
+                        <strong>Peso atômico</strong>
+                        <p>Indica a massa média dos átomos do elemento.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
     <main>
         <section id="main">
 
             <div class="table-periodic">
 
-
-                <p class="wrappers" style="grid-column: 1; grid-row: 2;  color:black; text-align: center;" >1</p>
-                <p class="wrappers" style="grid-column: 1; grid-row: 3;  color:black; text-align: center;" >2</p>
-                <p class="wrappers" style="grid-column: 1; grid-row: 4;  color:black; text-align: center;" >3</p>
-                <p class="wrappers" style="grid-column: 1; grid-row: 5;  color:black; text-align: center;" >4</p>
-                <p class="wrappers" style="grid-column: 1; grid-row: 6;  color:black; text-align: center;" >5</p>
-                <p class="wrappers" style="grid-column: 1; grid-row: 7;  color:black; text-align: center;" >6</p>
-                <p class="wrappers" style="grid-column: 1; grid-row: 8;  color:black; text-align: center;" >7</p>
+                <p class="wrappers" style="grid-column: 1; grid-row: 2;  color:black; text-align: center;">1</p>
+                <p class="wrappers" style="grid-column: 1; grid-row: 3;  color:black; text-align: center;">2</p>
+                <p class="wrappers" style="grid-column: 1; grid-row: 4;  color:black; text-align: center;">3</p>
+                <p class="wrappers" style="grid-column: 1; grid-row: 5;  color:black; text-align: center;">4</p>
+                <p class="wrappers" style="grid-column: 1; grid-row: 6;  color:black; text-align: center;">5</p>
+                <p class="wrappers" style="grid-column: 1; grid-row: 7;  color:black; text-align: center;">6</p>
+                <p class="wrappers" style="grid-column: 1; grid-row: 8;  color:black; text-align: center;">7</p>
 
                 <p class="wrappers" style="grid-column: 2; grid-row: 1; color:black; text-align: center;">1</p>
-                <p class="wrappers" style="grid-column: 3; grid-row: 1; color:black; text-align: center;" >2</p>
-                <p class="wrappers" style="grid-column: 4; grid-row: 1; color:black; text-align: center;" >3</p>
-                <p class="wrappers" style="grid-column: 5; grid-row: 1; color:black; text-align: center;" >4</p>
-                <p class="wrappers" style="grid-column: 6; grid-row: 1; color:black; text-align: center;" >5</p>
-                <p class="wrappers" style="grid-column: 7; grid-row: 1; color:black; text-align: center;" >6</p>
-                <p class="wrappers" style="grid-column: 8; grid-row: 1; color:black; text-align: center;" >7</p>
-                <p class="wrappers" style="grid-column: 9; grid-row: 1; color:black; text-align: center;" >8</p>
-                <p class="wrappers" style="grid-column: 10; grid-row: 1; color:black; text-align: center;" >9</p>
-                <p class="wrappers" style="grid-column: 11; grid-row: 1; color:black; text-align: center;" >10</p>
-                <p class="wrappers" style="grid-column: 12; grid-row: 1; color:black; text-align: center;" >11</p>
-                <p class="wrappers" style="grid-column: 13; grid-row: 1; color:black; text-align: center;" >12</p>
-                <p class="wrappers" style="grid-column: 14; grid-row: 1; color:black; text-align: center;" >13</p>
-                <p class="wrappers" style="grid-column: 19; grid-row: 1; color:black; text-align: center;" >18</p>
-                <p class="wrappers" style="grid-column: 15; grid-row: 1; color:black; text-align: center;" >14</p>
-                <p class="wrappers" style="grid-column: 16; grid-row: 1; color:black; text-align: center;" >15</p>
-                <p class="wrappers" style="grid-column: 17; grid-row: 1; color:black; text-align: center;" >16</p>
-                <p class="wrappers" style="grid-column: 18; grid-row: 1; color:black; text-align: center;" >17</p>
+                <p class="wrappers" style="grid-column: 3; grid-row: 1; color:black; text-align: center;">2</p>
+                <p class="wrappers" style="grid-column: 4; grid-row: 1; color:black; text-align: center;">3</p>
+                <p class="wrappers" style="grid-column: 5; grid-row: 1; color:black; text-align: center;">4</p>
+                <p class="wrappers" style="grid-column: 6; grid-row: 1; color:black; text-align: center;">5</p>
+                <p class="wrappers" style="grid-column: 7; grid-row: 1; color:black; text-align: center;">6</p>
+                <p class="wrappers" style="grid-column: 8; grid-row: 1; color:black; text-align: center;">7</p>
+                <p class="wrappers" style="grid-column: 9; grid-row: 1; color:black; text-align: center;">8</p>
+                <p class="wrappers" style="grid-column: 10; grid-row: 1; color:black; text-align: center;">9</p>
+                <p class="wrappers" style="grid-column: 11; grid-row: 1; color:black; text-align: center;">10</p>
+                <p class="wrappers" style="grid-column: 12; grid-row: 1; color:black; text-align: center;">11</p>
+                <p class="wrappers" style="grid-column: 13; grid-row: 1; color:black; text-align: center;">12</p>
+                <p class="wrappers" style="grid-column: 14; grid-row: 1; color:black; text-align: center;">13</p>
+                <p class="wrappers" style="grid-column: 19; grid-row: 1; color:black; text-align: center;">18</p>
+                <p class="wrappers" style="grid-column: 15; grid-row: 1; color:black; text-align: center;">14</p>
+                <p class="wrappers" style="grid-column: 16; grid-row: 1; color:black; text-align: center;">15</p>
+                <p class="wrappers" style="grid-column: 17; grid-row: 1; color:black; text-align: center;">16</p>
+                <p class="wrappers" style="grid-column: 18; grid-row: 1; color:black; text-align: center;">17</p>
+
+
+                <div class="elemento lantanideos descricao_elementos_celular" style="grid-column: 4; grid-row: 7; color:white;">
+                    <p class="simbolo">57-71</p>
+                </div>
+
+                <div class="elemento actinideos descricao_elementos_celular" style="grid-column: 4; grid-row: 8;">
+
+                    <p class="simbolo">89-103</p>
+
+                </div>
+
+
+                <div class="elemento lantanideos descricao_elementos" style="grid-column: 4; grid-row: 7; color:white;">
+
+                    <p class="simbolo">Lantanídeos</p>
+                    <span class="numero">57-71</span>
+                </div>
+
+
+
+                <div class="elemento actinideos descricao_elementos" style="grid-column: 4; grid-row: 8;">
+
+                    <p class="simbolo">Actinídeos</p>
+                    <span class="numero">89-103</span>
+                </div>
+
 
                 <!-- HIDROGÊNIO -->
-                <div data-imagem="img/hidrogenio.jpg" data-id="1" data-nome="Nome do elemento: Hidrogênio" data-simbolo="Símbolo químico: H" class="elemento nao_metais_diatomicos" style="grid-column:2; grid-row:2; background: #5F9EA0;">
+                <div data-id="1" data-nome="Nome do elemento: Hidrogênio" data-simbolo="Símbolo químico: H" class="elemento nao_metais_diatomicos" style="grid-column:2; grid-row:2; background: #5F9EA0;">
                     <span class="numero">1</span>
                     <a href="#" class="simbolo">H</a>
                     <span class="nome">Hidrogênio</span>
@@ -878,6 +967,74 @@
             </div>
 
         </section>
+
+
+
+
+        <section class="legend">
+
+            <div class="legend_container">
+
+                <div class="legend_item">
+                    <div class="legend_class metais_alcalinos"></div>
+                    <span class="name_element">Metais Alcalinos</span>
+                </div>
+
+                <div class="legend_item">
+                    <div class="legend_class metais_alcalinos_terrosos"></div>
+                    <span class="name_element">Metais Alcalinos-Terrosos</span>
+                </div>
+
+                <div class="legend_item">
+                    <div class="legend_class metais_de_transicao"></div>
+                    <span class="name_element">Metais de Transição</span>
+                </div>
+
+                <div class="legend_item">
+                    <div class="legend_class metais_pos_transicao"></div>
+                    <span class="name_element">Metais Pós-Transição</span>
+                </div>
+
+                <div class="legend_item">
+                    <div class="legend_class semi_metais"></div>
+                    <span class="name_element">Semimetais</span>
+                </div>
+
+                <div class="legend_item">
+                    <div class="legend_class nao_metais_poliatomicos"></div>
+                    <span class="name_element">Não Metais Poliatômicos</span>
+                </div>
+
+                <div class="legend_item">
+                    <div class="legend_class nao_metais_diatomicos"></div>
+                    <span class="name_element">Não Metais Diatômicos</span>
+                </div>
+
+                <div class="legend_item">
+                    <div class="legend_class gases_nobres"></div>
+                    <span class="name_element">Gases Nobres</span>
+                </div>
+
+                <div class="legend_item">
+                    <div class="legend_class desconhecidos"></div>
+                    <span class="name_element">Desconhecidos</span>
+                </div>
+
+                <div class="legend_item">
+                    <div class="legend_class lantanideos"></div>
+                    <span class="name_element">Lantanídeos</span>
+                </div>
+
+                <div class="legend_item">
+                    <div class="legend_class actinideos"></div>
+                    <span class="name_element">Actinídeos</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
     </main>
 
     <!-- Modal -->
