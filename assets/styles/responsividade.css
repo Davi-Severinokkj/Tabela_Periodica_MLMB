@@ -2,8 +2,8 @@
    RESPONSIVIDADE — TABELA PERIÓDICA MLMB
    Breakpoints:
    1440px  → desktop grande
-   1024px  → tablet / notebook
-   768px   → tablet pequeno / mobile
+   1024px  → notebook / tablet
+   768px   → tablet
    425px   → smartphone
    375px   → smartphone pequeno
    320px   → smartphone muito pequeno
@@ -37,11 +37,21 @@ body {
 }
 
 /* =========================================================
-   3. NOTEBOOK / TABLET GRANDE — 1024px
-   769px até 1439px
+   3. DESKTOP GRANDE — 1440px
+   1440px ou mais
    ========================================================= */
 
-@media screen and (min-width: 769px) and (max-width: 1439px) {
+@media screen and (min-width: 1440px) {
+    /* O CSS principal controla o desktop grande. */
+}
+
+
+/* =========================================================
+   4. NOTEBOOK / TABLET GRANDE — 1024px
+   1024px até 1439px
+   ========================================================= */
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
 
     .header_container {
         width: 100%;
@@ -177,11 +187,11 @@ body {
 
 
 /* =========================================================
-   4. TABLET / MOBILE GRANDE — 768px
-   426px até 768px
+   5. TABLET — 768px
+   768px até 1023px
    ========================================================= */
 
-@media screen and (min-width: 426px) and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 
     html,
     body {
@@ -201,7 +211,7 @@ body {
         padding: 10px 12px;
     }
 
-    .header_container>h2 {
+    .header_container h2 {
         display: none;
     }
 
@@ -220,7 +230,7 @@ body {
 
     #buttonTableP,
     #buttonMenu {
-        display: inline-flex;
+
         align-items: center;
         justify-content: center;
         margin: 0;
@@ -228,6 +238,7 @@ body {
     }
 
     #buttonTableP {
+        display: block;
         padding: 9px 11px;
         font-size: 12px;
     }
@@ -589,11 +600,11 @@ body {
 
 
 /* =========================================================
-   5. SMARTPHONE — 425px
-   376px até 425px
+   6. SMARTPHONE — 425px
+   425px até 767px
    ========================================================= */
 
-@media screen and (min-width: 376px) and (max-width: 425px) {
+@media screen and (min-width: 425px) and (max-width: 767px) {
 
     .header_container {
         padding: 10px;
@@ -604,16 +615,22 @@ body {
         width: 65px;
     }
 
+    .header_container h2 {
+        display: none;
+    }
+
     .menu-area {
         gap: 4px;
     }
 
     #buttonTableP {
+        display: block;
         padding: 8px 9px;
         font-size: 10px;
     }
 
     #buttonMenu {
+        display: block;
         padding: 8px 9px;
         font-size: 13px;
     }
@@ -671,6 +688,10 @@ body {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 6px;
         padding: 14px 10px;
+    }
+
+    .info-card {
+        flex-direction: column;
     }
 
     /* Modal */
@@ -755,11 +776,11 @@ body {
 
 
 /* =========================================================
-   6. SMARTPHONE PEQUENO — 375px
-   321px até 375px
+   7. SMARTPHONE PEQUENO — 375px
+   375px até 424px
    ========================================================= */
 
-@media screen and (min-width: 321px) and (max-width: 375px) {
+@media screen and (min-width: 375px) and (max-width: 424px) {
 
     .header_container {
         padding: 8px;
@@ -770,11 +791,20 @@ body {
         width: 60px;
     }
 
+    .header_container h2 {
+        display: none;
+    }
+
     .menu-area {
         gap: 3px;
     }
 
+    .nome {
+        display: none;
+    }
+
     #buttonTableP {
+        display: block;
         padding: 7px 8px;
         font-size: 9px;
     }
@@ -792,6 +822,10 @@ body {
     #search {
         padding: 10px 38px;
         font-size: 12px;
+    }
+
+    .info-card {
+        flex-direction: column;
     }
 
     .table-periodic {
@@ -911,11 +945,11 @@ body {
 
 
 /* =========================================================
-   7. SMARTPHONE MUITO PEQUENO — 320px
-   até 320px
+   8. SMARTPHONE MUITO PEQUENO — 320px
+   até 374px
    ========================================================= */
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 374px) {
 
     .header_container {
         padding: 7px;
@@ -926,23 +960,32 @@ body {
         width: 54px;
     }
 
+    .header_container h2 {
+        display: none;
+    }
+
     .menu-area {
         gap: 2px;
     }
 
     #buttonTableP {
+        display: block;
         padding: 6px 7px;
-        font-size: 8px;
+        font-size: 9px;
     }
 
     #buttonMenu {
         padding: 6px 7px;
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .search-container {
         width: calc(100% - 14px);
         margin: 10px auto;
+    }
+
+    .nome {
+        display: none;
     }
 
     #search {
@@ -954,6 +997,10 @@ body {
     .search-icon {
         left: 10px;
         font-size: 16px;
+    }
+
+    .info-card{
+        flex-direction: column;
     }
 
     #limparPesquisa {
@@ -1102,6 +1149,10 @@ body {
         line-height: 1.3;
     }
 
+    .info-card {
+        flex-direction: column;
+    }
+
     #configuracao {
         font-size: 10px;
         line-height: 1.4;
@@ -1114,9 +1165,7 @@ body {
     }
 
     /* Footer */
-    .footer_conteudo {
-        padding: 22px 8px 14px;
-    }
+    
 
     .footer_principal h2 {
         font-size: 16px;
@@ -1127,7 +1176,7 @@ body {
     }
 
     .footer_item {
-        padding: 10px;
+        padding: 7px;
     }
 
     .footer_item span {
@@ -1145,7 +1194,7 @@ body {
 
 
 /* =========================================================
-   8. SAFARI / iOS — SAFE AREA
+   9. SAFARI / iOS — SAFE AREA
    ========================================================= */
 
 @supports (padding: max(0px)) {
@@ -1169,7 +1218,7 @@ body {
 
 
 /* =========================================================
-   9. TOUCHSCREEN
+   10. TOUCHSCREEN
    ========================================================= */
 
 @media (hover: none) and (pointer: coarse) {
