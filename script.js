@@ -6,6 +6,7 @@ let menu = document.querySelector("#menuDropdown");
 botao.addEventListener("click", () => {
 
     menu.classList.toggle("ativo");
+    document.body.style.overflow = "hidden";
 
     if (menu.classList.contains("ativo")) {
 
@@ -32,13 +33,16 @@ let tabelaPeriodica = document.querySelector(".table-periodic");
 let botaoTabela = document.querySelector("#buttonTableP");
 let wrappers = document.querySelectorAll(".wrappers");
 let descricao_elementos = document.querySelectorAll(".descricao_elementos");
-
+let exemplo = document.querySelector(".info-elemento");
 let ordemOriginal = [...elementos];
 
 botaoTabela.addEventListener("click", () => {
+    exemplo.classList.toggle("off");
+    console.log(exemplo);
 
     const modoFormulario =
         tabelaPeriodica.classList.toggle("form");
+
 
     if (modoFormulario) {
 

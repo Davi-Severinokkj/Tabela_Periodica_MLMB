@@ -27,7 +27,6 @@ body {
     max-width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
 *,
@@ -201,7 +200,6 @@ body {
     }
 
     /* ---------- HEADER ---------- */
-
     .header_container {
         display: grid;
         grid-template-columns: auto 1fr auto;
@@ -249,7 +247,6 @@ body {
     }
 
     /* ---------- PESQUISA ---------- */
-
     .search-container {
         width: calc(100% - 24px);
         margin: 15px auto;
@@ -281,7 +278,6 @@ body {
     }
 
     /* ---------- MENU ---------- */
-
     #menuDropdown {
         top: 62px;
         right: 10px;
@@ -295,10 +291,9 @@ body {
     }
 
     /* ---------- LEGENDA / CARD ---------- */
-
     .legend_container {
         display: flex;
-        flex-direction: column;
+        justify-content: start;
         text-align: start;
         border-radius: 30px;
         padding: 30px;
@@ -342,7 +337,6 @@ body {
     }
 
     /* ---------- TABELA ---------- */
-
     .table-periodic {
         width: 100%;
         grid-template-columns: repeat(18, 40px);
@@ -407,7 +401,6 @@ body {
 
 
     /* ---------- MODO ALTERNATIVO ---------- */
-
     .table-periodic.form {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -423,7 +416,6 @@ body {
     }
 
     /* ---------- MODAL ---------- */
-
     #modal {
         padding: 10px;
         align-items: center;
@@ -539,7 +531,6 @@ body {
     }
 
     /* ---------- FOOTER ---------- */
-
     .footer_container {
         margin-top: 40px;
     }
@@ -638,6 +629,29 @@ body {
     .search-container {
         width: calc(100% - 20px);
         margin: 13px auto;
+    }
+
+    .legend_container {
+        width: 90%;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        text-align: left;
+    }
+
+    .legend_item {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .info-elemento img {
+        width: 230px;
+        height: 230px;
+        border-radius: 15px;
     }
 
     #search {
@@ -819,6 +833,12 @@ body {
         margin: 12px auto;
     }
 
+    .info-elemento img {
+        width: 215px;
+        height: 215px;
+        border-radius: 15px;
+    }
+
     #search {
         padding: 10px 38px;
         font-size: 12px;
@@ -832,6 +852,27 @@ body {
         grid-template-columns: repeat(18, 34px);
         gap: 3px;
         padding: 16px 8px 26px;
+    }
+
+    .legend_container {
+        width: 90%;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        text-align: left;
+    }
+
+    .legend_item {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .name_element {
+        text-align: left;
     }
 
     .elemento {
@@ -979,6 +1020,12 @@ body {
         font-size: 12px;
     }
 
+    .info-elemento img {
+        width: 200px;
+        height: 200px;
+        border-radius: 15px;
+    }
+
     .search-container {
         width: calc(100% - 14px);
         margin: 10px auto;
@@ -999,7 +1046,7 @@ body {
         font-size: 16px;
     }
 
-    .info-card{
+    .info-card {
         flex-direction: column;
     }
 
@@ -1020,6 +1067,27 @@ body {
         grid-template-columns: repeat(18, 31px);
         gap: 2px;
         padding: 14px 6px 22px;
+    }
+
+    .legend_container {
+        width: 90%;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        text-align: left;
+    }
+
+    .legend_item {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .name_element {
+        text-align: left;
     }
 
     .elemento {
@@ -1165,8 +1233,6 @@ body {
     }
 
     /* Footer */
-    
-
     .footer_principal h2 {
         font-size: 16px;
     }

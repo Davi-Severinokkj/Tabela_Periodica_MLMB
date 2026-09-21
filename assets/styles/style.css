@@ -137,8 +137,7 @@ body {
 
     text-align: left;
 
-    transition:
-        border-color 0.2s ease,
+    transition: border-color 0.2s ease,
         box-shadow 0.2s ease;
 }
 
@@ -183,8 +182,7 @@ body {
 
     cursor: pointer;
 
-    transition:
-        background 0.2s ease,
+    transition: background 0.2s ease,
         color 0.2s ease,
         transform 0.2s ease;
 }
@@ -241,8 +239,7 @@ body {
 
     cursor: pointer;
 
-    transition:
-        transform 0.15s ease,
+    transition: transform 0.15s ease,
         background 0.2s ease;
 }
 
@@ -283,8 +280,7 @@ body {
 
     cursor: pointer;
 
-    transition:
-        transform 0.2s ease,
+    transition: transform 0.2s ease,
         background 0.2s ease;
 }
 
@@ -329,8 +325,7 @@ body {
 
     transform: translateY(-10px);
 
-    transition:
-        opacity 0.2s ease,
+    transition: opacity 0.2s ease,
         transform 0.2s ease;
 }
 
@@ -358,8 +353,7 @@ body {
 
     font-size: 14px;
 
-    transition:
-        background 0.2s ease,
+    transition: background 0.2s ease,
         padding-left 0.2s ease;
 }
 
@@ -472,8 +466,7 @@ body {
 
     cursor: pointer;
 
-    transition:
-        transform 0.2s ease,
+    transition: transform 0.2s ease,
         opacity 0.2s ease,
         filter 0.2s ease;
 }
@@ -720,8 +713,7 @@ body {
 
     cursor: pointer;
 
-    transition:
-        background 0.2s ease,
+    transition: background 0.2s ease,
         color 0.2s ease,
         transform 0.2s ease;
 }
@@ -981,8 +973,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     text-align: center;
-    transition:
-        transform 0.2s ease,
+    transition: transform 0.2s ease,
         background 0.2s ease,
         border-color 0.2s ease;
 }
@@ -1153,17 +1144,25 @@ body {
 }
 
 /* =========================================================
-   INFORMAÇÕES DO ELEMENTO
+   ELEMENTO DE EXEMPLO
 ========================================================= */
 
 .info-elemento {
     width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
 
     margin-top: 25px;
     margin-bottom: 30px;
 }
+
+.info-elemento img {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+}
+
 
 .info-card {
     width: 90%;
@@ -1185,81 +1184,9 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-
-/* =========================================================
-   ELEMENTO DE EXEMPLO
-========================================================= */
-
-.elemento-exemplo {
-    width: 150px;
-    height: 170px;
-
-    flex-shrink: 0;
-
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    border: 3px solid #222;
-    border-radius: 8px;
-
-    background-color: #fff;
+.info-elemento.off {
+    display: none;
 }
-
-
-/* Número atômico */
-
-.numero-exemplo {
-    position: absolute;
-
-    top: 10px;
-    left: 12px;
-
-    font-size: 1.2rem;
-    font-weight: 700;
-
-    color: #222;
-}
-
-
-/* Símbolo */
-
-.simbolo-exemplo {
-    margin-top: 35px;
-
-    font-size: 3.5rem;
-    font-weight: 700;
-
-    line-height: 1;
-
-    color: #222;
-}
-
-
-/* Nome */
-
-.nome-exemplo {
-    margin-top: 12px;
-
-    font-size: 1.15rem;
-    font-weight: 600;
-
-    color: #222;
-}
-
-
-/* Peso */
-
-.massa-exemplo {
-    margin-top: 10px;
-
-    font-size: 0.95rem;
-
-    color: #555;
-}
-
 
 /* =========================================================
    INFORMAÇÕES
@@ -1336,4 +1263,32 @@ body {
     line-height: 1.4;
 
     color: #555;
+}
+
+.saiba-mais {     
+    margin: 0 10px 0 0;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    background: #528053;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 250;
+    cursor: pointer;
+    transition: transform 0.15s ease,
+        background 0.2s ease;
+}
+
+.saiba-mais a{
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+}
+
+.saiba-mais:hover{
+    box-shadow: 0px 0px 10px #509c51;
+    transition: 0.3s;
+    transform: translateY(-1px);
 }
