@@ -39,6 +39,7 @@ body {
 
     .header_container {
         width: 100%;
+        margin-top: 35px;
         padding: 10px 18px;
         gap: 15px;
     }
@@ -184,9 +185,10 @@ body {
         display: grid;
         grid-template-columns: auto 1fr auto;
         align-items: center;
-        gap: 8px;
         width: 100%;
-        padding: 10px 12px;
+        margin: 30px 0px 30px 0px;
+        padding: 20px 20px 0px 20px;
+        gap: 15px;
     }
 
     .header_container h2 {
@@ -578,8 +580,10 @@ body {
 @media screen and (min-width: 425px) and (max-width: 767px) {
 
     .header_container {
-        padding: 10px;
-        gap: 6px;
+        width: 100%;
+        margin: 30px 0px 30px 0px;
+        padding: 20px 20px 0px 20px;
+        gap: 15px;
     }
 
     .header_container img {
@@ -777,12 +781,17 @@ body {
 @media screen and (min-width: 375px) and (max-width: 424px) {
 
     .header_container {
-        padding: 8px;
-        gap: 5px;
+        width: 100%;
+        margin: 30px 0px 30px 0px;
+        padding: 20px 20px 0px 20px;
+        gap: 15px;
     }
 
     .header_container img {
         width: 60px;
+    }
+    .logo p{
+        font-size: 1.3rem;
     }
 
     .header_container h2 {
@@ -973,16 +982,18 @@ body {
 @media screen and (max-width: 374px) {
 
     .header_container {
-        padding: 7px;
-        gap: 3px;
+        width: 100%;
+        margin: 30px 0px 30px 0px;
+        padding: 20px 20px 0px 20px;
+        gap: 15px;
     }
 
     .header_container img {
         width: 54px;
     }
 
-    .logo p{
-        font-size: 1rem;
+    .logo p {
+        font-size: 1.3rem;
     }
 
     .header_container h2 {
@@ -1221,7 +1232,7 @@ body {
         font-size: 16px;
     }
 
-    .footer_info{
+    .footer_info {
         display: flex;
         flex-direction: column;
     }
@@ -1246,3 +1257,4 @@ body {
         font-size: 8px;
     }
 }
+
