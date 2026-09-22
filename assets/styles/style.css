@@ -6,6 +6,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 /* =========================================================
    RESET / CONFIGURAÇÕES GERAIS
@@ -36,7 +38,14 @@ body {
    HEADER
    ========================================================= */
 
+header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
 .header_container {
+
+    margin-top: 30px;
+    margin-bottom: 30px;
     width: 100%;
 
     display: flex;
@@ -47,7 +56,40 @@ body {
 
     padding: 10px 20px;
 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+
+}
+
+.text-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo p {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.logo i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EBEBEB;
+    font-size: 1.5rem;
+    background: #8B2F7A;
+    padding: 10px 25px 10px 25px;
+    border-radius: 15px;
 }
 
 .header_container img {
@@ -65,31 +107,18 @@ body {
 }
 
 .header_container h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 600;
     text-align: center;
     letter-spacing: -0.5px;
     color: #222;
-    line-height: 1.2;
-    max-width: 420px;
-}
 
-/* Destaque visual do título */
-.header_container h2::first-line {
-    font-size: 24px;
-}
-
-.header_container a {
-    color: #111;
-    text-decoration: none;
-
-    transition: color 0.2s ease;
-}
-
-.header_container a:hover {
-    color: #9370DB;
 }
 
 
@@ -138,7 +167,7 @@ body {
     text-align: left;
 
     transition: border-color 0.2s ease,
-        box-shadow 0.2s ease;
+    box-shadow 0.2s ease;
 }
 
 #search::placeholder {
@@ -183,8 +212,8 @@ body {
     cursor: pointer;
 
     transition: background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 #limparPesquisa:hover {
@@ -230,7 +259,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 8px;
 
-    background: #528053;
+    background: #8B2F7A;
     color: white;
 
     font-family: 'Poppins', sans-serif;
@@ -240,7 +269,7 @@ body {
     cursor: pointer;
 
     transition: transform 0.15s ease,
-        background 0.2s ease;
+    background 0.2s ease;
 }
 
 #buttonTableP:hover {
@@ -272,7 +301,7 @@ body {
     border: none;
     border-radius: 8px;
 
-    background: #528053;
+    background: #8B2F7A;
     color: white;
 
     font-family: 'Poppins', sans-serif;
@@ -281,7 +310,7 @@ body {
     cursor: pointer;
 
     transition: transform 0.2s ease,
-        background 0.2s ease;
+    background 0.2s ease;
 }
 
 #buttonMenu:hover {
@@ -326,7 +355,7 @@ body {
     transform: translateY(-10px);
 
     transition: opacity 0.2s ease,
-        transform 0.2s ease;
+    transform 0.2s ease;
 }
 
 #menuDropdown.ativo {
@@ -354,7 +383,7 @@ body {
     font-size: 14px;
 
     transition: background 0.2s ease,
-        padding-left 0.2s ease;
+    padding-left 0.2s ease;
 }
 
 #menuDropdown li a:hover {
@@ -467,8 +496,8 @@ body {
     cursor: pointer;
 
     transition: transform 0.2s ease,
-        opacity 0.2s ease,
-        filter 0.2s ease;
+    opacity 0.2s ease,
+    filter 0.2s ease;
 }
 
 .elemento:hover {
@@ -714,8 +743,8 @@ body {
     cursor: pointer;
 
     transition: background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 #fechar:hover {
@@ -922,9 +951,9 @@ body {
     width: 100%;
     margin-top: 60px;
     padding: 0;
-    background: #1f211f;
+    background: linear-gradient(135deg , #211D21 0%, #211D21 35%, #511c48 100%);
     color: #ffffff;
-    border-top: 4px solid #528053;
+
 }
 
 .footer_conteudo {
@@ -974,8 +1003,8 @@ body {
     border-radius: 12px;
     text-align: center;
     transition: transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .footer_item:hover {
@@ -988,7 +1017,7 @@ body {
 .footer_item span {
     display: block;
     margin-bottom: 12px;
-    color: #7fc281;
+    color: #8B2F7A;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     font-weight: 600;
@@ -1265,7 +1294,7 @@ body {
     color: #555;
 }
 
-.saiba-mais {     
+.saiba-mais {
     margin: 0 10px 0 0;
     padding: 0.9rem 1rem;
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -1276,10 +1305,10 @@ body {
     font-weight: 250;
     cursor: pointer;
     transition: transform 0.15s ease,
-        background 0.2s ease;
+    background 0.2s ease;
 }
 
-.saiba-mais a{
+.saiba-mais a {
     font-size: 0.8rem;
     font-weight: bold;
     color: white;
@@ -1287,7 +1316,7 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
-.saiba-mais:hover{
+.saiba-mais:hover {
     box-shadow: 0px 0px 10px #509c51;
     transition: 0.3s;
     transform: translateY(-1px);

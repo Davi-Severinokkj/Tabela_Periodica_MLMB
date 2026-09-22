@@ -35,21 +35,6 @@ body {
     box-sizing: border-box;
 }
 
-/* =========================================================
-   3. DESKTOP GRANDE — 1440px
-   1440px ou mais
-   ========================================================= */
-
-@media screen and (min-width: 1440px) {
-    /* O CSS principal controla o desktop grande. */
-}
-
-
-/* =========================================================
-   4. NOTEBOOK / TABLET GRANDE — 1024px
-   1024px até 1439px
-   ========================================================= */
-
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
 
     .header_container {
@@ -61,11 +46,6 @@ body {
     .header_container img {
         width: 85px;
         height: auto;
-    }
-
-    .header_container h2 {
-        max-width: 320px;
-        font-size: 18px;
     }
 
     .menu-area {
@@ -1001,6 +981,10 @@ body {
         width: 54px;
     }
 
+    .logo p{
+        font-size: 1rem;
+    }
+
     .header_container h2 {
         display: none;
     }
@@ -1237,6 +1221,11 @@ body {
         font-size: 16px;
     }
 
+    .footer_info{
+        display: flex;
+        flex-direction: column;
+    }
+
     .footer_principal p {
         font-size: 10px;
     }
@@ -1255,44 +1244,5 @@ body {
 
     .footer_final {
         font-size: 8px;
-    }
-}
-
-
-/* =========================================================
-   9. SAFARI / iOS — SAFE AREA
-   ========================================================= */
-
-@supports (padding: max(0px)) {
-
-    .header_container {
-        padding-left: max(8px, env(safe-area-inset-left));
-        padding-right: max(8px, env(safe-area-inset-right));
-    }
-
-    #modal {
-        padding-top: max(4px, env(safe-area-inset-top));
-        padding-bottom: max(4px, env(safe-area-inset-bottom));
-        padding-left: max(4px, env(safe-area-inset-left));
-        padding-right: max(4px, env(safe-area-inset-right));
-    }
-
-    .footer_conteudo {
-        padding-bottom: max(14px, env(safe-area-inset-bottom));
-    }
-}
-
-
-/* =========================================================
-   10. TOUCHSCREEN
-   ========================================================= */
-
-@media (hover: none) and (pointer: coarse) {
-
-    .elemento:hover,
-    #buttonMenu:hover,
-    #buttonTableP:hover,
-    #fechar:hover {
-        transform: none;
     }
 }

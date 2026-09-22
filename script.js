@@ -239,7 +239,19 @@ fechar.addEventListener("click", () => {
 
     modal.classList.remove("ativo");
 
-    document.body.style.overflow = "auto";
+});
+
+// ===== FECHAR MODAL AO CLICAR FORA =====
+
+modal.addEventListener("click", (e) => {
+
+    if (e.target === modal) {
+
+        modal.classList.remove("ativo");
+
+        document.body.style.overflow = "auto";
+
+    }
 
 });
 
