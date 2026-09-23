@@ -1,19 +1,18 @@
 /* =========================================================
    RESPONSIVIDADE — TABELA PERIÓDICA MLMB
-   Breakpoints:
-   1440px  → desktop grande
-   1024px  → notebook / tablet
-   768px   → tablet
-   425px   → smartphone
-   375px   → smartphone pequeno
-   320px   → smartphone muito pequeno
+   VERSÃO CORRIGIDA
+   =========================================================
 
-   IMPORTANTE:
-   - A tabela continua sendo CSS Grid.
-   - O Grid principal mantém as 18 colunas.
-   - Em telas pequenas, a tabela usa scroll horizontal.
-   - A versão completa de Lantanídeos/Actinídeos aparece no desktop.
-   - A versão compacta aparece somente em smartphones.
+   PRINCIPAIS CORREÇÕES:
+   - Breakpoints sem regras duplicadas/conflitantes.
+   - Responsividade do Safari separada das regras gerais.
+   - Scroll horizontal da tabela preservado no iOS.
+   - Grid da tabela usa 18 colunas fixas sem "encolher".
+   - Formulário alternativo não herda largura mínima da tabela.
+   - Modal corrigido para viewport dinâmica do iOS.
+   - Header protegido contra overflow.
+   - Safe-area corrigida sem substituir paddings importantes.
+   - Removidos estilos que poderiam criar overflow horizontal.
    ========================================================= */
 
 
@@ -25,6 +24,7 @@ html,
 body {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
     margin: 0;
     padding: 0;
 }
@@ -35,11 +35,17 @@ body {
     box-sizing: border-box;
 }
 
+
+/* =========================================================
+   2. NOTEBOOK / TABLET GRANDE — 1024px a 1439px
+   ========================================================= */
+
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
 
     .header_container {
         width: 100%;
-        margin-top: 35px;
+        max-width: 100%;
+        margin: 35px 0 30px;
         padding: 10px 18px;
         justify-content: space-between;
         gap: 15px;
@@ -48,6 +54,7 @@ body {
     .header_container img {
         width: 85px;
         height: auto;
+        flex-shrink: 0;
     }
 
     .menu-area {
@@ -59,15 +66,16 @@ body {
         margin: 18px auto;
     }
 
-    .table-periodic {
+    /* Tabela principal */
+    .table-periodic:not(.form) {
         width: 100%;
+        max-width: 100%;
+        grid-template-columns: repeat(18, minmax(42px, 42px));
         gap: 4px;
         padding: 35px 20px;
-        grid-template-columns: repeat(18, minmax(42px, 1fr));
         overflow-x: auto;
         overflow-y: visible;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
     }
 
     .elemento {
@@ -101,25 +109,32 @@ body {
         font-size: 0.7rem;
     }
 
+    /* Modo formulário */
     .table-periodic.form {
         display: grid;
+        width: 100%;
+        max-width: 100%;
         grid-template-columns: repeat(6, minmax(60px, 1fr));
         gap: 6px;
         padding: 20px;
+        overflow-x: hidden;
     }
 
     .table-periodic.form .elemento {
-        width: auto;
+        width: 100%;
         min-width: 0;
+        max-width: none;
         aspect-ratio: 1 / 1;
     }
 
+    /* Modal */
     #modal {
         padding: 15px;
     }
 
     .modal-conteudo {
         width: min(900px, 100%);
+        max-width: 100%;
         max-height: 92vh;
         padding: 25px 20px;
         border-radius: 16px;
@@ -134,10 +149,15 @@ body {
     .simbolo-elemento {
         width: 85px;
         height: 85px;
+        flex-shrink: 0;
     }
 
     .simbolo-elemento #simbolo {
         font-size: 32px;
+    }
+
+    .informacoes-principais {
+        min-width: 0;
     }
 
     .informacoes-principais h1 {
@@ -153,6 +173,7 @@ body {
         gap: 10px;
     }
 
+    /* Footer */
     .footer_conteudo {
         padding: 40px 25px 25px;
     }
@@ -168,27 +189,25 @@ body {
 
 
 /* =========================================================
-   5. TABLET — 768px
-   768px até 1023px
+   3. TABLET — 768px a 1023px
    ========================================================= */
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 
     html,
     body {
-        width: 100%;
-        max-width: 100%;
         overflow-x: hidden;
     }
 
-    /* ---------- HEADER ---------- */
+    /* Header */
     .header_container {
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: auto minmax(0, 1fr) auto;
         align-items: center;
         width: 100%;
-        margin: 30px 0px 30px 0px;
-        padding: 20px 20px 0px 20px;
+        max-width: 100%;
+        margin: 30px 0;
+        padding: 20px 20px 0;
         gap: 15px;
     }
 
@@ -199,6 +218,7 @@ body {
     .header_container img {
         width: 72px;
         height: auto;
+        flex-shrink: 0;
     }
 
     .menu-area {
@@ -206,20 +226,21 @@ body {
         align-items: center;
         justify-content: flex-end;
         gap: 6px;
+        min-width: 0;
         flex-shrink: 0;
     }
 
     #buttonTableP,
     #buttonMenu {
-
+        display: block;
         align-items: center;
         justify-content: center;
         margin: 0;
         white-space: nowrap;
+        flex-shrink: 0;
     }
 
     #buttonTableP {
-        display: block;
         padding: 9px 11px;
         font-size: 12px;
     }
@@ -229,14 +250,16 @@ body {
         font-size: 14px;
     }
 
-    /* ---------- PESQUISA ---------- */
+    /* Pesquisa */
     .search-container {
         width: calc(100% - 24px);
+        max-width: 100%;
         margin: 15px auto;
     }
 
     #search {
         width: 100%;
+        max-width: 100%;
         padding: 12px 42px;
         font-size: 14px;
         border-radius: 11px;
@@ -255,12 +278,14 @@ body {
     }
 
     #resultadoPesquisa {
+        width: 100%;
+        max-width: 100%;
         margin: -5px auto 15px;
         padding: 0 12px;
         font-size: 13px;
     }
 
-    /* ---------- MENU ---------- */
+    /* Menu */
     #menuDropdown {
         top: 62px;
         right: 10px;
@@ -273,17 +298,18 @@ body {
         font-size: 14px;
     }
 
-    /* ---------- LEGENDA / CARD ---------- */
+    /* Legenda */
     .legend_container {
         display: flex;
-        justify-content: start;
-        text-align: start;
+        justify-content: flex-start;
+        text-align: left;
         border-radius: 30px;
         padding: 30px;
     }
 
     .info-card {
         width: 92%;
+        max-width: 100%;
         flex-direction: column;
         gap: 30px;
         padding: 25px 15px;
@@ -300,6 +326,7 @@ body {
 
     .info-linhas {
         width: 100%;
+        min-width: 0;
     }
 
     .info-linha {
@@ -311,6 +338,10 @@ body {
         margin-top: 10px;
     }
 
+    .info-texto {
+        min-width: 0;
+    }
+
     .info-texto strong {
         font-size: 0.95rem;
     }
@@ -319,9 +350,10 @@ body {
         font-size: 0.8rem;
     }
 
-    /* ---------- TABELA ---------- */
-    .table-periodic {
+    /* Tabela principal */
+    .table-periodic:not(.form) {
         width: 100%;
+        max-width: 100%;
         grid-template-columns: repeat(18, 40px);
         gap: 3px;
         padding: 20px 12px 30px;
@@ -331,15 +363,15 @@ body {
         scrollbar-width: thin;
     }
 
-    .table-periodic::-webkit-scrollbar {
+    .table-periodic:not(.form)::-webkit-scrollbar {
         height: 5px;
     }
 
-    .table-periodic::-webkit-scrollbar-track {
+    .table-periodic:not(.form)::-webkit-scrollbar-track {
         background: transparent;
     }
 
-    .table-periodic::-webkit-scrollbar-thumb {
+    .table-periodic:not(.form)::-webkit-scrollbar-thumb {
         background: rgba(0, 0, 0, 0.25);
         border-radius: 10px;
     }
@@ -347,6 +379,7 @@ body {
     .elemento {
         width: 40px;
         min-width: 40px;
+        max-width: 40px;
         aspect-ratio: 4 / 5;
         border-radius: 6px;
     }
@@ -369,7 +402,6 @@ body {
         display: none;
     }
 
-    /* Desktop: texto completo */
     .descricao_elementos {
         display: none;
     }
@@ -382,23 +414,25 @@ body {
         font-size: 0.6rem;
     }
 
-
-    /* ---------- MODO ALTERNATIVO ---------- */
+    /* Form */
     .table-periodic.form {
         display: grid;
+        width: 100%;
+        max-width: 100%;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 6px;
-        width: 100%;
         padding: 15px 12px;
+        overflow-x: hidden;
     }
 
     .table-periodic.form .elemento {
         width: 100%;
         min-width: 0;
+        max-width: none;
         aspect-ratio: 1 / 1;
     }
 
-    /* ---------- MODAL ---------- */
+    /* Modal */
     #modal {
         padding: 10px;
         align-items: center;
@@ -412,6 +446,7 @@ body {
         padding: 25px 15px;
         border-radius: 14px;
         overflow-y: auto;
+        overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
     }
 
@@ -458,7 +493,7 @@ body {
         margin: 0;
         font-size: 24px;
         line-height: 1.15;
-        overflow-wrap: break-word;
+        overflow-wrap: anywhere;
     }
 
     .informacoes-principais p {
@@ -483,9 +518,11 @@ body {
     }
 
     .informacao {
+        min-width: 0;
         padding: 12px;
         border-radius: 9px;
         gap: 4px;
+        overflow: hidden;
     }
 
     .informacao span {
@@ -496,6 +533,7 @@ body {
         font-size: 14px;
         line-height: 1.4;
         overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     #configuracao {
@@ -507,19 +545,21 @@ body {
     }
 
     #descricao {
+        width: 100%;
         padding: 12px;
         font-size: 14px;
         line-height: 1.55;
-        overflow-wrap: break-word;
+        overflow-wrap: anywhere;
     }
 
-    /* ---------- FOOTER ---------- */
+    /* Footer */
     .footer_container {
         margin-top: 40px;
     }
 
     .footer_conteudo {
         width: 100%;
+        max-width: 100%;
         padding: 35px 18px 22px;
     }
 
@@ -574,21 +614,31 @@ body {
 
 
 /* =========================================================
-   6. SMARTPHONE — 425px
-   425px até 767px
+   4. SMARTPHONE — 425px a 767px
    ========================================================= */
 
 @media screen and (min-width: 425px) and (max-width: 767px) {
 
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
     .header_container {
         width: 100%;
-        margin: 30px 0px 30px 0px;
-        padding: 20px 20px 0px 20px;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        margin: 30px 0;
+        padding: 20px 20px 0;
         gap: 15px;
     }
 
     .header_container img {
         width: 65px;
+        height: auto;
+        flex-shrink: 0;
     }
 
     .header_container h2 {
@@ -596,7 +646,12 @@ body {
     }
 
     .menu-area {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
         gap: 4px;
+        min-width: 0;
+        flex-shrink: 0;
     }
 
     #buttonTableP {
@@ -613,47 +668,63 @@ body {
 
     .search-container {
         width: calc(100% - 20px);
+        max-width: 100%;
         margin: 13px auto;
+    }
+
+    #search {
+        width: 100%;
+        max-width: 100%;
+        padding: 11px 40px;
+        font-size: 13px;
     }
 
     .legend_container {
         width: 90%;
+        max-width: 100%;
         margin: 0 auto;
-
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-
         text-align: left;
     }
 
     .legend_item {
         width: 100%;
+        min-width: 0;
         justify-content: flex-start;
     }
 
     .info-elemento img {
-        width: 230px;
-        height: 230px;
+        width: min(230px, 100%);
+        height: auto;
         border-radius: 15px;
     }
 
-    #search {
-        padding: 11px 40px;
-        font-size: 13px;
+    .info-card {
+        width: calc(100% - 30px);
+        max-width: 100%;
+        margin: 0 auto;
+        flex-direction: column;
+        min-width: 0;
     }
 
-    /* Tabela continua Grid + scroll horizontal */
-    .table-periodic {
+    .table-periodic:not(.form) {
+        width: 100%;
+        max-width: 100%;
         grid-template-columns: repeat(18, 38px);
         gap: 3px;
         padding: 18px 10px 28px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
     }
 
     .elemento {
         width: 38px;
         min-width: 38px;
+        max-width: 38px;
     }
 
     .simbolo {
@@ -670,7 +741,6 @@ body {
         display: none;
     }
 
-    /* Troca correta das descrições */
     .descricao_elementos {
         display: none;
     }
@@ -684,13 +754,19 @@ body {
     }
 
     .table-periodic.form {
+        width: 100%;
+        max-width: 100%;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 6px;
         padding: 14px 10px;
+        overflow-x: hidden;
     }
 
-    .info-card {
-        flex-direction: column;
+    .table-periodic.form .elemento {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        aspect-ratio: 1 / 1;
     }
 
     /* Modal */
@@ -699,9 +775,14 @@ body {
     }
 
     .modal-conteudo {
+        width: 100%;
+        max-width: 100%;
         max-height: calc(100vh - 16px);
         padding: 23px 13px;
         border-radius: 13px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
     }
 
     .modal-cabecalho {
@@ -735,11 +816,13 @@ body {
     }
 
     .informacao {
+        min-width: 0;
         padding: 11px;
     }
 
     .informacao strong {
         font-size: 13px;
+        overflow-wrap: anywhere;
     }
 
     #descricao {
@@ -749,6 +832,8 @@ body {
 
     /* Footer */
     .footer_conteudo {
+        width: 100%;
+        max-width: 100%;
         padding: 30px 14px 18px;
     }
 
@@ -775,36 +860,46 @@ body {
 
 
 /* =========================================================
-   7. SMARTPHONE PEQUENO — 375px
-   375px até 424px
+   5. SMARTPHONE PEQUENO — 375px a 424px
    ========================================================= */
 
 @media screen and (min-width: 375px) and (max-width: 424px) {
 
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
     .header_container {
         width: 100%;
-        margin: 30px 0px 30px 0px;
-        padding: 20px 20px 0px 20px;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        margin: 30px 0;
+        padding: 20px 20px 0;
         gap: 15px;
     }
 
     .header_container img {
         width: 60px;
-    }
-    .logo p{
-        font-size: 1.3rem;
+        height: auto;
+        flex-shrink: 0;
     }
 
     .header_container h2 {
         display: none;
     }
 
-    .menu-area {
-        gap: 3px;
+    .logo p {
+        font-size: 1.3rem;
     }
 
-    .nome {
-        display: none;
+    .menu-area {
+        display: flex;
+        gap: 3px;
+        min-width: 0;
+        flex-shrink: 0;
     }
 
     #buttonTableP {
@@ -820,44 +915,44 @@ body {
 
     .search-container {
         width: calc(100% - 16px);
+        max-width: 100%;
         margin: 12px auto;
     }
 
-    .info-elemento img {
-        width: 215px;
-        height: 215px;
-        border-radius: 15px;
-    }
-
     #search {
+        width: 100%;
+        max-width: 100%;
         padding: 10px 38px;
         font-size: 12px;
     }
 
-    .info-card {
-        flex-direction: column;
+    .info-elemento img {
+        width: min(215px, 100%);
+        height: auto;
+        border-radius: 15px;
     }
 
-    .table-periodic {
-        grid-template-columns: repeat(18, 34px);
-        gap: 3px;
-        padding: 16px 8px 26px;
+    .info-card {
+        width: calc(100% - 30px);
+        max-width: 100%;
+        margin: 0 auto;
+        flex-direction: column;
     }
 
     .legend_container {
         width: 90%;
+        max-width: 100%;
         margin: 0 auto;
-
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-
         text-align: left;
     }
 
     .legend_item {
         width: 100%;
+        min-width: 0;
         justify-content: flex-start;
     }
 
@@ -865,9 +960,21 @@ body {
         text-align: left;
     }
 
+    .table-periodic:not(.form) {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: repeat(18, 34px);
+        gap: 3px;
+        padding: 16px 8px 26px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
     .elemento {
         width: 34px;
         min-width: 34px;
+        max-width: 34px;
         border-radius: 5px;
     }
 
@@ -879,6 +986,10 @@ body {
         top: 3px;
         left: 3px;
         font-size: 7px;
+    }
+
+    .nome {
+        display: none;
     }
 
     .descricao_elementos {
@@ -894,9 +1005,18 @@ body {
     }
 
     .table-periodic.form {
+        width: 100%;
+        max-width: 100%;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 4px;
         padding: 12px 8px;
+        overflow-x: hidden;
+    }
+
+    .table-periodic.form .elemento {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
     }
 
     /* Modal */
@@ -905,9 +1025,14 @@ body {
     }
 
     .modal-conteudo {
+        width: 100%;
+        max-width: 100%;
         max-height: calc(100vh - 12px);
         padding: 20px 11px;
         border-radius: 12px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
     }
 
     .modal-cabecalho {
@@ -946,6 +1071,8 @@ body {
 
     /* Footer */
     .footer_conteudo {
+        width: 100%;
+        max-width: 100%;
         padding: 25px 10px 16px;
     }
 
@@ -976,21 +1103,35 @@ body {
 
 
 /* =========================================================
-   8. SMARTPHONE MUITO PEQUENO — 320px
-   até 374px
+   6. SMARTPHONE MUITO PEQUENO — ATÉ 374px
    ========================================================= */
 
 @media screen and (max-width: 374px) {
 
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
     .header_container {
         width: 100%;
-        margin: 30px 0px 30px 0px;
-        padding: 20px 20px 0px 20px;
-        gap: 15px;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        margin: 30px 0;
+        padding: 20px 12px 0;
+        gap: 6px;
     }
 
     .header_container img {
         width: 54px;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .header_container h2 {
+        display: none;
     }
 
     .logo p {
@@ -998,12 +1139,11 @@ body {
         font-size: 1rem;
     }
 
-    .header_container h2 {
-        display: none;
-    }
-
     .menu-area {
+        display: flex;
         gap: 2px;
+        min-width: 0;
+        flex-shrink: 0;
     }
 
     #buttonTableP {
@@ -1017,22 +1157,15 @@ body {
         font-size: 12px;
     }
 
-    .info-elemento img {
-        width: 200px;
-        height: 200px;
-        border-radius: 15px;
-    }
-
     .search-container {
         width: calc(100% - 14px);
+        max-width: 100%;
         margin: 10px auto;
     }
 
-    .nome {
-        display: none;
-    }
-
     #search {
+        width: 100%;
+        max-width: 100%;
         padding: 9px 35px;
         font-size: 11px;
         border-radius: 9px;
@@ -1043,10 +1176,6 @@ body {
         font-size: 16px;
     }
 
-    .info-card {
-        flex-direction: column;
-    }
-
     #limparPesquisa {
         right: 5px;
         width: 25px;
@@ -1055,31 +1184,39 @@ body {
     }
 
     #resultadoPesquisa {
+        width: 100%;
+        max-width: 100%;
         font-size: 11px;
         padding: 0 8px;
     }
 
-    /* Tabela */
-    .table-periodic {
-        grid-template-columns: repeat(18, 31px);
-        gap: 2px;
-        padding: 14px 6px 22px;
+    .info-elemento img {
+        width: min(200px, 100%);
+        height: auto;
+        border-radius: 15px;
+    }
+
+    .info-card {
+        width: calc(100% - 20px);
+        max-width: 100%;
+        margin: 0 auto;
+        flex-direction: column;
     }
 
     .legend_container {
         width: 90%;
+        max-width: 100%;
         margin: 0 auto;
-
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-
         text-align: left;
     }
 
     .legend_item {
         width: 100%;
+        min-width: 0;
         justify-content: flex-start;
     }
 
@@ -1087,9 +1224,22 @@ body {
         text-align: left;
     }
 
+    /* Tabela principal */
+    .table-periodic:not(.form) {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: repeat(18, 31px);
+        gap: 2px;
+        padding: 14px 6px 22px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
     .elemento {
         width: 31px;
         min-width: 31px;
+        max-width: 31px;
         border-radius: 4px;
     }
 
@@ -1101,6 +1251,10 @@ body {
         top: 2px;
         left: 2px;
         font-size: 6px;
+    }
+
+    .nome {
+        display: none;
     }
 
     .descricao_elementos {
@@ -1116,16 +1270,20 @@ body {
         line-height: 1;
     }
 
-    /* Modo alternativo */
+    /* Form */
     .table-periodic.form {
+        width: 100%;
+        max-width: 100%;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 3px;
         padding: 10px 6px;
+        overflow-x: hidden;
     }
 
     .table-periodic.form .elemento {
         width: 100%;
         min-width: 0;
+        max-width: none;
     }
 
     /* Menu */
@@ -1147,9 +1305,14 @@ body {
     }
 
     .modal-conteudo {
+        width: 100%;
+        max-width: 100%;
         max-height: calc(100vh - 8px);
         padding: 18px 9px;
         border-radius: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
     }
 
     #fechar {
@@ -1214,13 +1377,10 @@ body {
         line-height: 1.3;
     }
 
-    .info-card {
-        flex-direction: column;
-    }
-
     #configuracao {
         font-size: 10px;
         line-height: 1.4;
+        overflow-wrap: anywhere;
     }
 
     #descricao {
@@ -1260,3 +1420,641 @@ body {
     }
 }
 
+
+/* =========================================================
+   7. SAFARI / iOS
+   =========================================================
+
+   IMPORTANTE:
+   Este bloco fica FORA dos media queries anteriores.
+   Assim evitamos regras condicionais aninhadas que podem
+   gerar diferenças de interpretação entre versões do Safari.
+
+   O seletor -webkit-touch-callout é usado apenas como
+   detecção de WebKit/iOS no contexto deste projeto.
+   ========================================================= */
+
+@supports (-webkit-touch-callout: none) {
+
+    html {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    *,
+    *::before,
+    *::after {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ---------- HEADER ---------- */
+
+    .header_container {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        grid-template-columns: auto minmax(0, 1fr) auto;
+
+        padding-left: 16px;
+        padding-right: 16px;
+
+        margin-left: 0;
+        margin-right: 0;
+
+        gap: 10px;
+
+        overflow: visible;
+    }
+
+    .header_container img {
+        max-width: 65px;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .header_container h2 {
+        min-width: 0;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .menu-area {
+        min-width: 0;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5px;
+    }
+
+    #buttonTableP,
+    #buttonMenu {
+        min-width: 0;
+        flex-shrink: 0;
+        white-space: nowrap;
+        -webkit-appearance: none;
+        appearance: none;
+        touch-action: manipulation;
+    }
+
+    /* ---------- PESQUISA ---------- */
+
+    .search-container {
+        width: calc(100% - 24px);
+        max-width: 100%;
+        min-width: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #search {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+
+        /* Evita zoom automático do Safari ao focar */
+        font-size: 16px;
+
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .search-icon {
+        pointer-events: none;
+    }
+
+    #limparPesquisa {
+        flex-shrink: 0;
+        -webkit-appearance: none;
+        appearance: none;
+        touch-action: manipulation;
+    }
+
+    #resultadoPesquisa {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
+    }
+
+    /* ---------- MENU ---------- */
+
+    #menuDropdown {
+        max-width: calc(100vw - 20px);
+        box-sizing: border-box;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+
+    #menuDropdown li,
+    #menuDropdown li a {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* ---------- LEGENDA ---------- */
+
+    .legend_container {
+        width: calc(100% - 30px);
+        max-width: 100%;
+        min-width: 0;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .legend_item {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .legend_item span,
+    .legend_item p,
+    .name_element {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    /* ---------- CARD ---------- */
+
+    .info-card {
+        width: calc(100% - 30px);
+        max-width: 100%;
+        min-width: 0;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    .info-elemento,
+    .info-linhas,
+    .info-texto {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .info-elemento img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* ---------- TABELA PRINCIPAL ---------- */
+
+    .table-periodic:not(.form) {
+        display: grid;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        /*
+         * O elemento externo continua com a largura da tela,
+         * enquanto as 18 colunas formam um conteúdo maior.
+         * Isso cria o scroll horizontal correto.
+         */
+        grid-template-columns: repeat(18, 38px);
+
+        justify-content: start;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+        box-sizing: border-box;
+    }
+
+    .table-periodic:not(.form)::-webkit-scrollbar {
+        display: none;
+    }
+
+    .table-periodic:not(.form) .elemento {
+        width: 38px;
+        min-width: 38px;
+        max-width: 38px;
+        flex-shrink: 0;
+    }
+
+    .elemento {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .numero {
+        line-height: 1;
+    }
+
+    .simbolo {
+        line-height: 1;
+    }
+
+    .nome {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* ---------- FORM ---------- */
+
+    .table-periodic.form {
+        display: grid;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+
+        overflow-x: hidden;
+        overflow-y: visible;
+
+        box-sizing: border-box;
+    }
+
+    .table-periodic.form .elemento {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* ---------- MODAL ---------- */
+
+    #modal {
+        position: fixed;
+
+        width: 100%;
+        max-width: 100%;
+
+        /*
+         * svh representa o viewport estável no iOS.
+         * dvh é aplicado quando suportado mais abaixo.
+         */
+        min-height: 100svh;
+
+        padding: 8px;
+
+        box-sizing: border-box;
+        overflow: hidden;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .modal-conteudo {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        min-height: 0;
+
+        max-height: calc(100svh - 16px);
+
+        box-sizing: border-box;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        -webkit-overflow-scrolling: touch;
+
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+
+    /* ---------- CABEÇALHO DO MODAL ---------- */
+
+    .modal-cabecalho {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .informacoes-principais {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .informacoes-principais h1,
+    .informacoes-principais p {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .simbolo-elemento {
+        flex-shrink: 0;
+    }
+
+    /* ---------- INFORMAÇÕES ---------- */
+
+    .grid-informacoes {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .informacao {
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .informacao span,
+    .informacao strong {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    #configuracao {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #descricao {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    #fechar {
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    .footer_container,
+    .footer_conteudo,
+    .footer_principal,
+    .footer_info,
+    .footer_item,
+    .footer_final {
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .footer_conteudo {
+        width: 100%;
+    }
+
+    .footer_item {
+        overflow: hidden;
+    }
+
+    .footer_item strong,
+    .footer_item span,
+    .footer_principal p,
+    .footer_final span {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    /* ---------- iOS 425–767 ---------- */
+
+    @media screen and (min-width: 425px) and (max-width: 767px) {
+
+        .header_container {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+
+        .header_container img {
+            width: 65px;
+        }
+
+        .table-periodic:not(.form) {
+            grid-template-columns: repeat(18, 38px);
+        }
+
+        .table-periodic:not(.form) .elemento {
+            width: 38px;
+            min-width: 38px;
+            max-width: 38px;
+        }
+
+        .modal-conteudo {
+            max-height: calc(100svh - 16px);
+            padding: 23px 13px;
+        }
+    }
+
+    /* ---------- iOS 375–424 ---------- */
+
+    @media screen and (min-width: 375px) and (max-width: 424px) {
+
+        .header_container {
+            padding-left: 15px;
+            padding-right: 15px;
+            gap: 8px;
+        }
+
+        .header_container img {
+            width: 60px;
+        }
+
+        .table-periodic:not(.form) {
+            grid-template-columns: repeat(18, 34px);
+            gap: 3px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .table-periodic:not(.form) .elemento {
+            width: 34px;
+            min-width: 34px;
+            max-width: 34px;
+        }
+
+        .simbolo {
+            font-size: 16px;
+        }
+
+        .numero {
+            font-size: 7px;
+        }
+
+        .table-periodic.form {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .modal-conteudo {
+            max-height: calc(100svh - 12px);
+            padding: 20px 11px;
+        }
+
+        .info-elemento img {
+            max-width: 215px;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    /* ---------- iOS até 374 ---------- */
+
+    @media screen and (max-width: 374px) {
+
+        .header_container {
+            padding-left: 12px;
+            padding-right: 12px;
+            gap: 6px;
+        }
+
+        .header_container img {
+            width: 54px;
+        }
+
+        .menu-area {
+            gap: 2px;
+        }
+
+        .table-periodic:not(.form) {
+            grid-template-columns: repeat(18, 31px);
+            gap: 2px;
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+
+        .table-periodic:not(.form) .elemento {
+            width: 31px;
+            min-width: 31px;
+            max-width: 31px;
+        }
+
+        .simbolo {
+            font-size: 14px;
+        }
+
+        .numero {
+            font-size: 6px;
+        }
+
+        .table-periodic.form {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 3px;
+        }
+
+        .modal-conteudo {
+            max-height: calc(100svh - 8px);
+            padding: 18px 9px;
+        }
+
+        .info-elemento img {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    /* ---------- TOUCH ---------- */
+
+    @media (hover: none) and (pointer: coarse) {
+
+        .elemento:hover,
+        button:hover,
+        a:hover {
+            transform: none;
+        }
+
+        .elemento,
+        button,
+        a {
+            touch-action: manipulation;
+        }
+    }
+
+    /* ---------- VIEWPORT DINÂMICO ---------- */
+
+    @supports (height: 100dvh) {
+
+        #modal {
+            min-height: 100dvh;
+        }
+
+        .modal-conteudo {
+            max-height: calc(100dvh - 16px);
+        }
+    }
+
+    /* ---------- SAFE AREA ---------- */
+
+    @supports (padding: env(safe-area-inset-top)) {
+
+        .header_container {
+            padding-left: max(
+                    12px,
+                    env(safe-area-inset-left)
+            );
+
+            padding-right: max(
+                    12px,
+                    env(safe-area-inset-right)
+            );
+        }
+
+        #modal {
+            padding-top: max(
+                    8px,
+                    env(safe-area-inset-top)
+            );
+
+            padding-bottom: max(
+                    8px,
+                    env(safe-area-inset-bottom)
+            );
+
+            padding-left: max(
+                    8px,
+                    env(safe-area-inset-left)
+            );
+
+            padding-right: max(
+                    8px,
+                    env(safe-area-inset-right)
+            );
+        }
+
+        .footer_conteudo {
+            padding-bottom: max(
+                    18px,
+                    env(safe-area-inset-bottom)
+            );
+        }
+    }
+}

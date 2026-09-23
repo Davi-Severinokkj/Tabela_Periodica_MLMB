@@ -43,7 +43,7 @@ header {
 }
 
 .header_container {
-    
+
     padding: 30px 0px 0px 0px;
     margin-bottom: 30px;
     width: 100%;
@@ -54,7 +54,7 @@ header {
 
     gap: 25px;
 
-    
+
 
 
 }
@@ -196,9 +196,7 @@ header {
 }
 
 #search:focus {
-    border-color: #528053;
-
-    box-shadow: 0 0 0 3px rgba(82, 128, 83, 0.15);
+    border-color: #8B2F7A;
 }
 
 
