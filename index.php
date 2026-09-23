@@ -630,8 +630,8 @@
                 </div>
 
                 <!-- ASTATO -->
-                <div data-id="85" class="elemento semi_metais metais_pos_transicao halogênios"
-                    style="grid-column:18; grid-row:7;">
+                <div data-id="85" class="elemento halogênios semi_metais"
+                    style="grid-column:18; grid-row:7; background: #006400;">
                     <span class="numero">85</span>
                     <a href="#" class="simbolo">At</a>
                     <span class="nome">Astato</span>
