@@ -1208,7 +1208,7 @@
     <?php include('includes/footer.html'); ?>
 
 
-    <script src="script.js?v=<?php echo filemtime('script.js'); ?>"></script>
+    <script src="script.js?v=<?php echo filemtime(__DIR__ . '/script.js'); ?>"></script>
 
 </body>
 
