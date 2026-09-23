@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php include('includes/head.html'); ?>
+<?php include('includes/head.php'); ?>
 
 <body>
 
@@ -1208,7 +1208,7 @@
     <?php include('includes/footer.html'); ?>
 
 
-    <script src="script.js"></script>
+    <script src="script.js?v=<?php echo filemtime('script.js'); ?>"></script>
 
 </body>
 

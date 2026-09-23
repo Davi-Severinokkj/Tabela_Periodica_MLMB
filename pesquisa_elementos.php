@@ -344,7 +344,7 @@
 <?php
 
 include("includes/conexao.php");
-include("includes/head.html");
+include("includes/head.php");
 include("includes/header.html");
 
 if (!isset($_GET["search"]) || trim($_GET["search"]) === "") {
