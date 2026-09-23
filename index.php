@@ -6,24 +6,31 @@
 
     <?php include('includes/header.html'); ?>
 
-    <div class="search-container">
+    <form action="pesquisa_elementos.php">
+        <div class="search-container">
+            <span class="search-icon">⌕</span>
+            <input
+                type="text"
+                id="search"
+                name="search"
+                autocomplete="off"
+                style="font-size: 0.7rem"
+                placeholder="Pesquise pelo nome, símbolo ou número atômico.">
 
-        <span class="search-icon">⌕</span>
 
-        <input
-            type="text"
-            id="search"
-            autocomplete="off"
-            placeholder="Pesquisar elemento...">
+            <button id="limparPesquisa" type="button">&times;</button>
+        </div>
+        <div class="botao_pesquisa">
+            <input type="submit" class="botao_pesquisa" value="PESQUISAR">
+        </div>
+        <p id="resultadoPesquisa" style="margin-top: 15px"></p>
 
-        <button id="limparPesquisa" type="button">&times;</button>
+    </form>
 
-    </div>
 
-    <p id="resultadoPesquisa"></p>
 
     <section class="info-elemento">
-        <img src="img/1.png" alt="">
+        <img src="img/1.png" alt="" id="imagemElemento">
     </section>
 
     <main>

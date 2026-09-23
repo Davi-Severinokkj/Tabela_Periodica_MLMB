@@ -362,10 +362,21 @@ links.forEach(link => {
 
 // ===== PESQUISA =====
 
+
 const search = document.getElementById("search");
 const limparPesquisa = document.getElementById("limparPesquisa");
 const resultadoPesquisa = document.getElementById("resultadoPesquisa");
 
+const secao_imagem = document.querySelector(".info-elemento");
+const imagem = document.querySelector("#imagemElemento");
+
+search.addEventListener("focus", () => {
+    imagem.style.display = "none";
+});
+
+search.addEventListener("blur", () => {
+    imagem.style.display = "block";
+});
 
 // Remove acentos e transforma em minúsculo
 
@@ -477,6 +488,6 @@ limparPesquisa.addEventListener("click", () => {
 
     realizarPesquisa();
 
-    search.focus();
+    search.blur();
 
 });

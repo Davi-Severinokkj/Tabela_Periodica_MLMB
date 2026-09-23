@@ -137,6 +137,27 @@ header {
     align-items: center;
 }
 
+.botao_pesquisa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao_pesquisa input[type=submit]{
+    color: white;
+    background: #8B2F7A;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+}
+.botao_pesquisa input[type=submit]:hover{
+    box-shadow: 0px 0px 10px #8B2F7A;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
 .search-icon {
     position: absolute;
 
@@ -1180,15 +1201,16 @@ header {
     width: 100%;
     height: auto;
     display: flex;
+    align-items: center;
     justify-content: center;
 
     margin-top: 25px;
     margin-bottom: 30px;
 }
 
-.info-elemento img {
-    width: 300px;
-    height: 300px;
+#imagemElemento {
+    width: 250px;
+    height: 250px;
     border-radius: 15px;
 }
 
