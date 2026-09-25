@@ -6,31 +6,52 @@
 
     <?php include('includes/header.html'); ?>
 
-    <form action="pesquisa_elementos.php">
-        <div class="search-container">
-            <span class="search-icon">⌕</span>
-            <input
-                type="text"
-                id="search"
-                name="search"
-                autocomplete="off"
-                style="font-size: 0.7rem"
-                placeholder="Pesquise pelo nome, símbolo ou número atômico.">
 
-
-            <button id="limparPesquisa" type="button">&times;</button>
-        </div>
-        <div class="botao_pesquisa">
-            <input type="submit" class="botao_pesquisa" value="PESQUISAR">
-        </div>
-        <p id="resultadoPesquisa" style="margin-top: 15px"></p>
-
-    </form>
 
 
 
     <section class="info-elemento">
-        <img src="img/1.png" alt="" id="imagemElemento">
+        <div class="info-elemento_content">
+            <h1>TABELA PERIÓDICA</h1>
+            <p>
+                Olá, seja bem-vindo ao Elementor, um site criado para tornar o estudo da Tabela Periódica mais simples, visual e acessível.
+            </p>
+
+            <p>
+                Aqui, você pode conhecer os elementos químicos de forma rápida e organizada, encontrando informações sobre cada elemento, suas características e propriedades.
+            </p>
+
+            <p>
+                O Elementor foi desenvolvido pensando em quem quer aprender, revisar conteúdos ou simplesmente conhecer melhor os elementos que fazem parte do nosso mundo.
+            </p>
+
+            <p>
+                Explore a Tabela Periódica, pesquise um elemento e descubra o que existe por trás de cada símbolo, número e propriedade.
+            </p>
+            <form action="pesquisa_elementos.php">
+                <div class="search-container">
+                    <span class="search-icon">⌕</span>
+                    <input
+                        type="text"
+                        id="search"
+                        name="search"
+                        autocomplete="off"
+                        style="font-size: 0.7rem"
+                        placeholder="Pesquise pelo nome, símbolo ou número atômico.">
+
+
+                    <button id="limparPesquisa" type="button">&times;</button>
+                </div>
+                <div class="botao_pesquisa">
+                    <input type="submit" class="botao_pesquisa" value="Pesquisar">
+                </div>
+                <p id="resultadoPesquisa" style="margin-top: 15px"></p>
+
+            </form>
+        </div>
+        <div>
+            <img src="img/1.png" alt="" id="imagemElemento">
+        </div>
     </section>
 
     <main>

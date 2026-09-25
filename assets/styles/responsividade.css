@@ -66,17 +66,8 @@ body {
         margin: 18px auto;
     }
 
-    /* Tabela principal */
-    .table-periodic:not(.form) {
-        width: 100%;
-        max-width: 100%;
-        grid-template-columns: repeat(18, minmax(42px, 42px));
-        gap: 4px;
-        padding: 35px 20px;
-        overflow-x: auto;
-        overflow-y: visible;
-        -webkit-overflow-scrolling: touch;
-    }
+    
+
 
     .elemento {
         min-width: 42px;
@@ -2017,44 +2008,30 @@ body {
     @supports (padding: env(safe-area-inset-top)) {
 
         .header_container {
-            padding-left: max(
-                    12px,
-                    env(safe-area-inset-left)
-            );
+            padding-left: max(12px,
+                    env(safe-area-inset-left));
 
-            padding-right: max(
-                    12px,
-                    env(safe-area-inset-right)
-            );
+            padding-right: max(12px,
+                    env(safe-area-inset-right));
         }
 
         #modal {
-            padding-top: max(
-                    8px,
-                    env(safe-area-inset-top)
-            );
+            padding-top: max(8px,
+                    env(safe-area-inset-top));
 
-            padding-bottom: max(
-                    8px,
-                    env(safe-area-inset-bottom)
-            );
+            padding-bottom: max(8px,
+                    env(safe-area-inset-bottom));
 
-            padding-left: max(
-                    8px,
-                    env(safe-area-inset-left)
-            );
+            padding-left: max(8px,
+                    env(safe-area-inset-left));
 
-            padding-right: max(
-                    8px,
-                    env(safe-area-inset-right)
-            );
+            padding-right: max(8px,
+                    env(safe-area-inset-right));
         }
 
         .footer_conteudo {
-            padding-bottom: max(
-                    18px,
-                    env(safe-area-inset-bottom)
-            );
+            padding-bottom: max(18px,
+                    env(safe-area-inset-bottom));
         }
     }
 }
