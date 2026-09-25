@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $usuario = "root";
-$senha = "Seemg@1222017";
+$senha = "";
 $banco = "tabela_periodica";
 
 ?>

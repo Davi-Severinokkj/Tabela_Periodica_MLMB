@@ -39,6 +39,7 @@ body {
    ========================================================= */
 
 header {
+    background: white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
@@ -51,6 +52,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
 
     gap: 25px;
 
@@ -126,33 +128,37 @@ header {
    ÁREA DE PESQUISA
    ========================================================= */
 
+#form_search{
+    justify-content: start;
+}
+
 .search-container {
     position: relative;
 
     width: min(400px, 90%);
 
-    margin: 20px auto;
+    margin: 20px 0;
 
     display: flex;
     align-items: center;
 }
-
-.botao_pesquisa{
+.botao_pesquisa {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 
-.botao_pesquisa input[type=submit]{
+.botao_pesquisa input[type=submit] {
     color: white;
     background: #8B2F7A;
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 10px;
     border-radius: 10px;
     border: none;
     transition: 0.3s;
 }
-.botao_pesquisa input[type=submit]:hover{
+
+.botao_pesquisa input[type=submit]:hover {
     box-shadow: 0px 0px 10px #8B2F7A;
     transition: 0.3s;
     cursor: pointer;
@@ -188,7 +194,7 @@ header {
     text-align: left;
 
     transition: border-color 0.2s ease,
-    box-shadow 0.2s ease;
+        box-shadow 0.2s ease;
 }
 
 #search::placeholder {
@@ -231,8 +237,8 @@ header {
     cursor: pointer;
 
     transition: background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 #limparPesquisa:hover {
@@ -288,7 +294,7 @@ header {
     cursor: pointer;
 
     transition: transform 0.15s ease,
-    background 0.2s ease;
+        background 0.2s ease;
 }
 
 #buttonTableP:hover {
@@ -329,7 +335,7 @@ header {
     cursor: pointer;
 
     transition: transform 0.2s ease,
-    background 0.2s ease;
+        background 0.2s ease;
 }
 
 #buttonMenu:hover {
@@ -374,10 +380,11 @@ header {
     transform: translateY(-10px);
 
     transition: opacity 0.2s ease,
-    transform 0.2s ease;
+        transform 0.2s ease;
 }
 
 #menuDropdown.ativo {
+    position: absolute;
     display: block;
 
     opacity: 1;
@@ -402,7 +409,7 @@ header {
     font-size: 14px;
 
     transition: background 0.2s ease,
-    padding-left 0.2s ease;
+        padding-left 0.2s ease;
 }
 
 #menuDropdown li a:hover {
@@ -515,8 +522,8 @@ header {
     cursor: pointer;
 
     transition: transform 0.2s ease,
-    opacity 0.2s ease,
-    filter 0.2s ease;
+        opacity 0.2s ease,
+        filter 0.2s ease;
 }
 
 .elemento:hover {
@@ -762,8 +769,8 @@ header {
     cursor: pointer;
 
     transition: background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 #fechar:hover {
@@ -970,7 +977,7 @@ header {
     width: 100%;
     margin-top: 60px;
     padding: 0;
-    background: linear-gradient(135deg , #211D21 0%, #211D21 35%, #511c48 100%);
+    background: linear-gradient(135deg, #211D21 0%, #211D21 35%, #511c48 100%);
     color: #ffffff;
 
 }
@@ -1022,8 +1029,8 @@ header {
     border-radius: 12px;
     text-align: center;
     transition: transform 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease;
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .footer_item:hover {
@@ -1198,43 +1205,60 @@ header {
 .info-elemento {
     width: 100%;
     height: auto;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
     margin-top: 25px;
     margin-bottom: 30px;
+
+    gap: 50px;
+}
+
+.text_elex{
+    text-decoration: none; 
+    color: red;
+}
+
+.text_elex:hover{
+    transition: 0.3s;
+    color:brown;
+}
+
+.info-elemento_content {
+    width: 100%;
+    max-width: 900px;
+    line-height: 1.5;
+
+    margin: 50px;
+    padding: 30px;
+
+    font-size: 1.1rem;
+}
+
+.info-elemento_content form {
+    width: 100%;
+}
+
+.info-elemento_content p{
+    font-size: 1.2rem;
+}
+
+.info-elemento_elemento {
+    flex-direction: column;
+    gap: 10px;
+    
+    display: flex;
+    margin: 50px;
+    padding: 30px;
+    
 }
 
 #imagemElemento {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     border-radius: 15px;
-}
-
-
-.info-card {
-    width: 90%;
-    max-width: 900px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 45px;
-
-    padding: 30px;
-
-    background-color: #ffffff;
-
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.info-elemento.off {
-    display: none;
 }
 
 /* =========================================================
@@ -1325,7 +1349,7 @@ header {
     font-weight: 250;
     cursor: pointer;
     transition: transform 0.15s ease,
-    background 0.2s ease;
+        background 0.2s ease;
 }
 
 .saiba-mais a {

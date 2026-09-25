@@ -1,3 +1,9 @@
+<?php
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php include('includes/head.php'); ?>
@@ -26,9 +32,9 @@
             </p>
 
             <p>
-                Explore a Tabela Periódica, pesquise um elemento e descubra o que existe por trás de cada símbolo, número e propriedade.
+                Explore a <a href="#main" class="text_elex">Tabela Periódica</a>, pesquise um elemento e descubra o que existe por trás de cada símbolo, número e propriedade.
             </p>
-            <form action="pesquisa_elementos.php">
+            <form id="form_search" action="pesquisa_elementos.php">
                 <div class="search-container">
                     <span class="search-icon">⌕</span>
                     <input
@@ -36,7 +42,7 @@
                         id="search"
                         name="search"
                         autocomplete="off"
-                        style="font-size: 0.7rem"
+                        style="font-size: 0.8rem"
                         placeholder="Pesquise pelo nome, símbolo ou número atômico.">
 
 
@@ -49,7 +55,8 @@
 
             </form>
         </div>
-        <div>
+        <div class="info-elemento_elemento" style="text-align: center;">
+            <span>Elemento de exemplo</span>
             <img src="img/1.png" alt="" id="imagemElemento">
         </div>
     </section>
@@ -1001,58 +1008,68 @@
             <div class="legend_container">
 
                 <div class="legend_item">
-                    <div class="legend_class metais_alcalinos"></div>
                     <span class="name_element">Metais Alcalinos</span>
+                    <div class="legend_class metais_alcalinos"></div>
                 </div>
 
                 <div class="legend_item">
-                    <div class="legend_class metais_alcalinos_terrosos"></div>
+
                     <span class="name_element">Metais Alcalinos-Terrosos</span>
+                    <div class="legend_class metais_alcalinos_terrosos"></div>
                 </div>
 
                 <div class="legend_item">
-                    <div class="legend_class metais_de_transicao"></div>
+
                     <span class="name_element">Metais de Transição</span>
+                    <div class="legend_class metais_de_transicao"></div>
                 </div>
 
                 <div class="legend_item">
-                    <div class="legend_class metais_pos_transicao"></div>
+
                     <span class="name_element">Metais Pós-Transição</span>
+                    <div class="legend_class metais_pos_transicao"></div>
                 </div>
 
                 <div class="legend_item">
-                    <div class="legend_class semi_metais"></div>
+
                     <span class="name_element">Semimetais</span>
+                    <div class="legend_class semi_metais"></div>
                 </div>
 
                 <div class="legend_item">
-                    <div class="legend_class nao_metais_poliatomicos"></div>
+
                     <span class="name_element">Não Metais Poliatômicos</span>
+                    <div class="legend_class nao_metais_poliatomicos"></div>
                 </div>
 
                 <div class="legend_item">
-                    <div class="legend_class nao_metais_diatomicos"></div>
+
                     <span class="name_element">Não Metais Diatômicos</span>
+                    <div class="legend_class nao_metais_diatomicos"></div>
                 </div>
 
                 <div class="legend_item">
-                    <div class="legend_class gases_nobres"></div>
+
                     <span class="name_element">Gases Nobres</span>
+                    <div class="legend_class gases_nobres"></div>
                 </div>
 
                 <div class="legend_item">
-                    <div class="legend_class desconhecidos"></div>
+
                     <span class="name_element">Desconhecidos</span>
+                    <div class="legend_class desconhecidos"></div>
                 </div>
 
                 <div class="legend_item">
-                    <div class="legend_class lantanideos"></div>
+
                     <span class="name_element">Lantanídeos</span>
+                    <div class="legend_class lantanideos"></div>
                 </div>
 
                 <div class="legend_item">
-                    <div class="legend_class actinideos"></div>
+
                     <span class="name_element">Actinídeos</span>
+                    <div class="legend_class actinideos"></div>
                 </div>
 
             </div>
